@@ -6,17 +6,41 @@ using System.Web.Services;
 
 namespace ZenAppServer
 {
-    /// <summary>
-    /// Summary description for WebService1
-    /// </summary>
     [WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
-    // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
-    // [System.Web.Script.Services.ScriptService]
     public class WebService1 : System.Web.Services.WebService
     {
         public string connectionString = ConfigurationManager.ConnectionStrings["ZenAppConnectionString"].ConnectionString;
+
+        [WebMethod]
+        public string GetSongNameById(int songId)
+        {
+            string songName = "";
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string sql = "SELECT SongName FROM Songs WHERE Id = @Id";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@Id", songId);
+                        object result = command.ExecuteScalar();
+                        if (result != null)
+                        {
+                            songName = result.ToString();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions, e.g., log or return error message
+                songName = "Error: " + ex.Message;
+            }
+            return songName;
+        }
 
         [WebMethod]
         public Song GetRandomSong()
@@ -34,8 +58,8 @@ namespace ZenAppServer
                         Id = reader.GetInt32(0),
                         SongCountry = reader.GetString(1),
                         SongYear = reader.GetString(2),
-                        SongName = reader.GetString(3),
-                        SongArtist = reader.GetString(4),
+                        SongArtist = reader.GetString(3),
+                        SongName = reader.GetString(4),
                         SongLink = reader.GetString(5)
                     };
                 }
@@ -44,13 +68,13 @@ namespace ZenAppServer
         }
 
         [WebMethod]
-        public bool VerifyGuess(int songId, string guessedYear, string guessedCountry)
+        public bool VerifyGuess(int Id, string guessedYear, string guessedCountry)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "SELECT SongYear, SongCountry FROM Songs WHERE Id = @SongId";
+                string query = "SELECT SongYear, SongCountry FROM Songs WHERE Id = @Id";
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@SongId", songId);
+                cmd.Parameters.AddWithValue("@Id", Id);
                 conn.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
@@ -64,26 +88,26 @@ namespace ZenAppServer
         }
 
         [WebMethod]
-        public string GetHintYear(int songId)
+        public string GetHintYear(int Id)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "SELECT SongYear FROM Songs WHERE Id = @SongId";
+                string query = "SELECT SongYear FROM Songs WHERE Id = @Id";
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@SongId", songId);
+                cmd.Parameters.AddWithValue("@Id", Id);
                 conn.Open();
                 return cmd.ExecuteScalar().ToString();
             }
         }
 
         [WebMethod]
-        public string GetHintCountry(int songId)
+        public string GetHintCountry(int Id)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "SELECT SongCountry FROM Songs WHERE Id = @SongId";
+                string query = "SELECT SongCountry FROM Songs WHERE Id = @Id";
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@SongId", songId);
+                cmd.Parameters.AddWithValue("@Id", Id);
                 conn.Open();
                 return cmd.ExecuteScalar().ToString();
             }
@@ -133,8 +157,8 @@ namespace ZenAppServer
                         Id = reader.GetInt32(0),
                         SongCountry = reader.GetString(1),
                         SongYear = reader.GetString(2),
-                        SongName = reader.GetString(3),
-                        SongArtist = reader.GetString(4),
+                        SongArtist = reader.GetString(3),
+                        SongName = reader.GetString(4),
                         SongLink = reader.GetString(5)
                     });
                 }
@@ -148,8 +172,8 @@ namespace ZenAppServer
         public int Id { get; set; }
         public string SongCountry { get; set; }
         public string SongYear { get; set; }
-        public string SongName { get; set; }
         public string SongArtist { get; set; }
+        public string SongName { get; set; }
         public string SongLink { get; set; }
     }
 }
