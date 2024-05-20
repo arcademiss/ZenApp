@@ -5,8 +5,7 @@
     },
     "mssql1": {
       "type": "mssql",
-      "connectionId": "ZenAppConnectionString",
-      "dynamicId": null
+      "connectionId": "ZenAppConnectionString"
     }
   }
 }
