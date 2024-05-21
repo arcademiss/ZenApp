@@ -233,6 +233,7 @@
             this.button_Hint_Year.TabIndex = 18;
             this.button_Hint_Year.Text = "Hint Year";
             this.button_Hint_Year.UseVisualStyleBackColor = true;
+            this.button_Hint_Year.Click += new System.EventHandler(this.button_Hint_Year_Click);
             // 
             // button_Hint_Country
             // 

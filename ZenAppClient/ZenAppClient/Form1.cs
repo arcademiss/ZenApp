@@ -173,9 +173,20 @@ namespace ZenAppClient
             
         }
 
+        private void button_Hint_Year_Click(object sender, EventArgs e)
+        {
+            button_Hint_Country.Enabled = false;
+            MessageBox.Show("The year is " + "1970" + " or whatever.");// replace 1970 with service call
+            ZenPoints -= 200;
+            update_ZenPointsLabel();
+        }
+
         private void button_Hint_Country_Click(object sender, EventArgs e)
         {
-
+            button_Hint_Year.Enabled = false;
+            MessageBox.Show("The country is " + "China" + " or nearby.");// replace China with service call
+            ZenPoints -= 200;
+            update_ZenPointsLabel();
         }
     }
 }
