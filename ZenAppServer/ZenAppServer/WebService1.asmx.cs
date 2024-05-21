@@ -8,6 +8,8 @@ namespace ZenAppServer
     /// <summary>
     /// Summary description for WebService1
     /// </summary>
+    
+
     [WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
@@ -15,6 +17,7 @@ namespace ZenAppServer
     // [System.Web.Script.Services.ScriptService]
     public class WebService1 : System.Web.Services.WebService
     {
+        public string connectionString = ConfigurationManager.ConnectionStrings["ZenAppConnectionString"].ConnectionString;
 
         [WebMethod]
         public string HelloWorld()
