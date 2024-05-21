@@ -183,7 +183,7 @@ namespace ZenAppClient
 
         private void button_Hint_Country_Click(object sender, EventArgs e)
         {
-            button_Hint_Year.Enabled = false;
+            button_Hint_Country.Enabled = false;
             MessageBox.Show("The country is " + "China" + " or nearby.");// replace China with service call
             ZenPoints -= 200;
             update_ZenPointsLabel();
