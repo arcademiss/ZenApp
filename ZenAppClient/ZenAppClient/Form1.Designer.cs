@@ -29,24 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.button_1950 = new System.Windows.Forms.Button();
-            this.button_1960 = new System.Windows.Forms.Button();
-            this.button_1970 = new System.Windows.Forms.Button();
-            this.button_1980 = new System.Windows.Forms.Button();
-            this.button_1990 = new System.Windows.Forms.Button();
-            this.button_2000 = new System.Windows.Forms.Button();
-            this.button_2010 = new System.Windows.Forms.Button();
-            this.button_2020 = new System.Windows.Forms.Button();
-            this.button_United_States = new System.Windows.Forms.Button();
-            this.button_United_Kingdom = new System.Windows.Forms.Button();
-            this.button_Japan = new System.Windows.Forms.Button();
-            this.button_South_Korea = new System.Windows.Forms.Button();
-            this.button_Germany = new System.Windows.Forms.Button();
-            this.button_France = new System.Windows.Forms.Button();
-            this.button_Brazil = new System.Windows.Forms.Button();
-            this.button_Romania = new System.Windows.Forms.Button();
-            this.button_India = new System.Windows.Forms.Button();
-            this.button_Spain = new System.Windows.Forms.Button();
             this.button_Hint_Year = new System.Windows.Forms.Button();
             this.button_Hint_Country = new System.Windows.Forms.Button();
             this.buttonLeaderboard = new System.Windows.Forms.Button();
@@ -58,172 +40,20 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelZenPoints = new System.Windows.Forms.Label();
             this.labelRound = new System.Windows.Forms.Label();
+            this.buttonGuess = new System.Windows.Forms.Button();
+            this.groupYears = new System.Windows.Forms.GroupBox();
+            this.radioButton8 = new System.Windows.Forms.RadioButton();
+            this.radioButton7 = new System.Windows.Forms.RadioButton();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.groupBoxCountries = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupYears.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button_1950
-            // 
-            this.button_1950.Location = new System.Drawing.Point(12, 67);
-            this.button_1950.Name = "button_1950";
-            this.button_1950.Size = new System.Drawing.Size(96, 46);
-            this.button_1950.TabIndex = 0;
-            this.button_1950.Text = "1950";
-            this.button_1950.UseVisualStyleBackColor = true;
-            // 
-            // button_1960
-            // 
-            this.button_1960.Location = new System.Drawing.Point(12, 119);
-            this.button_1960.Name = "button_1960";
-            this.button_1960.Size = new System.Drawing.Size(96, 46);
-            this.button_1960.TabIndex = 1;
-            this.button_1960.Text = "1960";
-            this.button_1960.UseVisualStyleBackColor = true;
-            // 
-            // button_1970
-            // 
-            this.button_1970.Location = new System.Drawing.Point(12, 171);
-            this.button_1970.Name = "button_1970";
-            this.button_1970.Size = new System.Drawing.Size(96, 46);
-            this.button_1970.TabIndex = 2;
-            this.button_1970.Text = "1970";
-            this.button_1970.UseVisualStyleBackColor = true;
-            // 
-            // button_1980
-            // 
-            this.button_1980.Location = new System.Drawing.Point(12, 223);
-            this.button_1980.Name = "button_1980";
-            this.button_1980.Size = new System.Drawing.Size(96, 46);
-            this.button_1980.TabIndex = 3;
-            this.button_1980.Text = "1980";
-            this.button_1980.UseVisualStyleBackColor = true;
-            // 
-            // button_1990
-            // 
-            this.button_1990.Location = new System.Drawing.Point(12, 275);
-            this.button_1990.Name = "button_1990";
-            this.button_1990.Size = new System.Drawing.Size(96, 46);
-            this.button_1990.TabIndex = 4;
-            this.button_1990.Text = "1990";
-            this.button_1990.UseVisualStyleBackColor = true;
-            // 
-            // button_2000
-            // 
-            this.button_2000.Location = new System.Drawing.Point(12, 327);
-            this.button_2000.Name = "button_2000";
-            this.button_2000.Size = new System.Drawing.Size(96, 46);
-            this.button_2000.TabIndex = 5;
-            this.button_2000.Text = "2000";
-            this.button_2000.UseVisualStyleBackColor = true;
-            // 
-            // button_2010
-            // 
-            this.button_2010.Location = new System.Drawing.Point(12, 379);
-            this.button_2010.Name = "button_2010";
-            this.button_2010.Size = new System.Drawing.Size(96, 46);
-            this.button_2010.TabIndex = 6;
-            this.button_2010.Text = "2010";
-            this.button_2010.UseVisualStyleBackColor = true;
-            // 
-            // button_2020
-            // 
-            this.button_2020.Location = new System.Drawing.Point(12, 431);
-            this.button_2020.Name = "button_2020";
-            this.button_2020.Size = new System.Drawing.Size(96, 46);
-            this.button_2020.TabIndex = 7;
-            this.button_2020.Text = "2020";
-            this.button_2020.UseVisualStyleBackColor = true;
-            // 
-            // button_United_States
-            // 
-            this.button_United_States.Location = new System.Drawing.Point(142, 508);
-            this.button_United_States.Name = "button_United_States";
-            this.button_United_States.Size = new System.Drawing.Size(75, 126);
-            this.button_United_States.TabIndex = 8;
-            this.button_United_States.Text = "United States";
-            this.button_United_States.UseVisualStyleBackColor = true;
-            // 
-            // button_United_Kingdom
-            // 
-            this.button_United_Kingdom.Location = new System.Drawing.Point(223, 508);
-            this.button_United_Kingdom.Name = "button_United_Kingdom";
-            this.button_United_Kingdom.Size = new System.Drawing.Size(75, 126);
-            this.button_United_Kingdom.TabIndex = 9;
-            this.button_United_Kingdom.Text = "United Kingdom";
-            this.button_United_Kingdom.UseVisualStyleBackColor = true;
-            // 
-            // button_Japan
-            // 
-            this.button_Japan.Location = new System.Drawing.Point(304, 508);
-            this.button_Japan.Name = "button_Japan";
-            this.button_Japan.Size = new System.Drawing.Size(75, 126);
-            this.button_Japan.TabIndex = 10;
-            this.button_Japan.Text = "Japan";
-            this.button_Japan.UseVisualStyleBackColor = true;
-            // 
-            // button_South_Korea
-            // 
-            this.button_South_Korea.Location = new System.Drawing.Point(385, 508);
-            this.button_South_Korea.Name = "button_South_Korea";
-            this.button_South_Korea.Size = new System.Drawing.Size(75, 126);
-            this.button_South_Korea.TabIndex = 11;
-            this.button_South_Korea.Text = "South Korea";
-            this.button_South_Korea.UseVisualStyleBackColor = true;
-            // 
-            // button_Germany
-            // 
-            this.button_Germany.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Germany.Location = new System.Drawing.Point(466, 508);
-            this.button_Germany.Name = "button_Germany";
-            this.button_Germany.Size = new System.Drawing.Size(75, 126);
-            this.button_Germany.TabIndex = 12;
-            this.button_Germany.Text = "Germany";
-            this.button_Germany.UseVisualStyleBackColor = true;
-            // 
-            // button_France
-            // 
-            this.button_France.Location = new System.Drawing.Point(547, 508);
-            this.button_France.Name = "button_France";
-            this.button_France.Size = new System.Drawing.Size(75, 126);
-            this.button_France.TabIndex = 13;
-            this.button_France.Text = "France";
-            this.button_France.UseVisualStyleBackColor = true;
-            // 
-            // button_Brazil
-            // 
-            this.button_Brazil.Location = new System.Drawing.Point(628, 508);
-            this.button_Brazil.Name = "button_Brazil";
-            this.button_Brazil.Size = new System.Drawing.Size(75, 126);
-            this.button_Brazil.TabIndex = 14;
-            this.button_Brazil.Text = "Brazil";
-            this.button_Brazil.UseVisualStyleBackColor = true;
-            // 
-            // button_Romania
-            // 
-            this.button_Romania.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Romania.Location = new System.Drawing.Point(709, 508);
-            this.button_Romania.Name = "button_Romania";
-            this.button_Romania.Size = new System.Drawing.Size(91, 126);
-            this.button_Romania.TabIndex = 15;
-            this.button_Romania.Text = "Romania";
-            this.button_Romania.UseVisualStyleBackColor = true;
-            // 
-            // button_India
-            // 
-            this.button_India.Location = new System.Drawing.Point(806, 508);
-            this.button_India.Name = "button_India";
-            this.button_India.Size = new System.Drawing.Size(75, 126);
-            this.button_India.TabIndex = 16;
-            this.button_India.Text = "India";
-            this.button_India.UseVisualStyleBackColor = true;
-            // 
-            // button_Spain
-            // 
-            this.button_Spain.Location = new System.Drawing.Point(887, 508);
-            this.button_Spain.Name = "button_Spain";
-            this.button_Spain.Size = new System.Drawing.Size(75, 126);
-            this.button_Spain.TabIndex = 17;
-            this.button_Spain.Text = "Spain";
-            this.button_Spain.UseVisualStyleBackColor = true;
             // 
             // button_Hint_Year
             // 
@@ -266,7 +96,7 @@
             // 
             // buttonPlaySong
             // 
-            this.buttonPlaySong.Location = new System.Drawing.Point(499, 417);
+            this.buttonPlaySong.Location = new System.Drawing.Point(385, 417);
             this.buttonPlaySong.Name = "buttonPlaySong";
             this.buttonPlaySong.Size = new System.Drawing.Size(74, 74);
             this.buttonPlaySong.TabIndex = 23;
@@ -329,12 +159,164 @@
             this.labelRound.TabIndex = 30;
             this.labelRound.Text = "Round:";
             // 
+            // buttonGuess
+            // 
+            this.buttonGuess.Location = new System.Drawing.Point(628, 417);
+            this.buttonGuess.Name = "buttonGuess";
+            this.buttonGuess.Size = new System.Drawing.Size(74, 74);
+            this.buttonGuess.TabIndex = 31;
+            this.buttonGuess.Text = "Guess";
+            this.buttonGuess.UseVisualStyleBackColor = true;
+            this.buttonGuess.Click += new System.EventHandler(this.buttonGuess_Click);
+            // 
+            // groupYears
+            // 
+            this.groupYears.BackgroundImage = global::ZenAppClient.Properties.Resources.hand_painted_watercolor_abstract_background_23_2148993785;
+            this.groupYears.Controls.Add(this.radioButton8);
+            this.groupYears.Controls.Add(this.radioButton7);
+            this.groupYears.Controls.Add(this.radioButton6);
+            this.groupYears.Controls.Add(this.radioButton5);
+            this.groupYears.Controls.Add(this.radioButton4);
+            this.groupYears.Controls.Add(this.radioButton3);
+            this.groupYears.Controls.Add(this.radioButton2);
+            this.groupYears.Controls.Add(this.radioButton1);
+            this.groupYears.Location = new System.Drawing.Point(12, 95);
+            this.groupYears.Name = "groupYears";
+            this.groupYears.Size = new System.Drawing.Size(138, 243);
+            this.groupYears.TabIndex = 32;
+            this.groupYears.TabStop = false;
+            this.groupYears.Text = "groupBox1";
+            // 
+            // radioButton8
+            // 
+            this.radioButton8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioButton8.AutoSize = true;
+            this.radioButton8.Location = new System.Drawing.Point(6, 211);
+            this.radioButton8.Name = "radioButton8";
+            this.radioButton8.Size = new System.Drawing.Size(56, 20);
+            this.radioButton8.TabIndex = 7;
+            this.radioButton8.TabStop = true;
+            this.radioButton8.Text = "2020";
+            this.radioButton8.UseVisualStyleBackColor = true;
+            // 
+            // radioButton7
+            // 
+            this.radioButton7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioButton7.AutoSize = true;
+            this.radioButton7.Location = new System.Drawing.Point(6, 185);
+            this.radioButton7.Name = "radioButton7";
+            this.radioButton7.Size = new System.Drawing.Size(56, 20);
+            this.radioButton7.TabIndex = 6;
+            this.radioButton7.TabStop = true;
+            this.radioButton7.Text = "2010";
+            this.radioButton7.UseVisualStyleBackColor = true;
+            // 
+            // radioButton6
+            // 
+            this.radioButton6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.Location = new System.Drawing.Point(6, 159);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(56, 20);
+            this.radioButton6.TabIndex = 5;
+            this.radioButton6.TabStop = true;
+            this.radioButton6.Text = "2000";
+            this.radioButton6.UseVisualStyleBackColor = true;
+            // 
+            // radioButton5
+            // 
+            this.radioButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Location = new System.Drawing.Point(6, 129);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(56, 20);
+            this.radioButton5.TabIndex = 4;
+            this.radioButton5.TabStop = true;
+            this.radioButton5.Text = "1990";
+            this.radioButton5.UseVisualStyleBackColor = true;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(6, 103);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(56, 20);
+            this.radioButton4.TabIndex = 3;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "1980";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(6, 77);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(56, 20);
+            this.radioButton3.TabIndex = 2;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "1970";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(6, 51);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(56, 20);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "1960";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(6, 25);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(56, 20);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "1950";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // groupBoxCountries
+            // 
+            this.groupBoxCountries.Location = new System.Drawing.Point(491, 523);
+            this.groupBoxCountries.Name = "groupBoxCountries";
+            this.groupBoxCountries.Size = new System.Drawing.Size(200, 100);
+            this.groupBoxCountries.TabIndex = 33;
+            this.groupBoxCountries.TabStop = false;
+            this.groupBoxCountries.Text = "groupBox1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1081, 646);
+            this.Controls.Add(this.groupBoxCountries);
+            this.Controls.Add(this.groupYears);
+            this.Controls.Add(this.buttonGuess);
             this.Controls.Add(this.labelRound);
             this.Controls.Add(this.labelZenPoints);
             this.Controls.Add(this.pictureBox1);
@@ -346,52 +328,17 @@
             this.Controls.Add(this.buttonLeaderboard);
             this.Controls.Add(this.button_Hint_Country);
             this.Controls.Add(this.button_Hint_Year);
-            this.Controls.Add(this.button_Spain);
-            this.Controls.Add(this.button_India);
-            this.Controls.Add(this.button_Romania);
-            this.Controls.Add(this.button_Brazil);
-            this.Controls.Add(this.button_France);
-            this.Controls.Add(this.button_Germany);
-            this.Controls.Add(this.button_South_Korea);
-            this.Controls.Add(this.button_Japan);
-            this.Controls.Add(this.button_United_Kingdom);
-            this.Controls.Add(this.button_United_States);
-            this.Controls.Add(this.button_2020);
-            this.Controls.Add(this.button_2010);
-            this.Controls.Add(this.button_2000);
-            this.Controls.Add(this.button_1990);
-            this.Controls.Add(this.button_1980);
-            this.Controls.Add(this.button_1970);
-            this.Controls.Add(this.button_1960);
-            this.Controls.Add(this.button_1950);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupYears.ResumeLayout(false);
+            this.groupYears.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button_1950;
-        private System.Windows.Forms.Button button_1960;
-        private System.Windows.Forms.Button button_1970;
-        private System.Windows.Forms.Button button_1980;
-        private System.Windows.Forms.Button button_1990;
-        private System.Windows.Forms.Button button_2000;
-        private System.Windows.Forms.Button button_2010;
-        private System.Windows.Forms.Button button_2020;
-        private System.Windows.Forms.Button button_United_States;
-        private System.Windows.Forms.Button button_United_Kingdom;
-        private System.Windows.Forms.Button button_Japan;
-        private System.Windows.Forms.Button button_South_Korea;
-        private System.Windows.Forms.Button button_Germany;
-        private System.Windows.Forms.Button button_France;
-        private System.Windows.Forms.Button button_Brazil;
-        private System.Windows.Forms.Button button_Romania;
-        private System.Windows.Forms.Button button_India;
-        private System.Windows.Forms.Button button_Spain;
         private System.Windows.Forms.Button button_Hint_Year;
         private System.Windows.Forms.Button button_Hint_Country;
         private System.Windows.Forms.Button buttonLeaderboard;
@@ -403,6 +350,17 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label labelZenPoints;
         private System.Windows.Forms.Label labelRound;
+        private System.Windows.Forms.Button buttonGuess;
+        private System.Windows.Forms.GroupBox groupYears;
+        private System.Windows.Forms.RadioButton radioButton8;
+        private System.Windows.Forms.RadioButton radioButton7;
+        private System.Windows.Forms.RadioButton radioButton6;
+        private System.Windows.Forms.RadioButton radioButton5;
+        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.GroupBox groupBoxCountries;
     }
 }
 

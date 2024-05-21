@@ -188,5 +188,17 @@ namespace ZenAppClient
             ZenPoints -= 200;
             update_ZenPointsLabel();
         }
+
+        private void buttonGuess_Click(object sender, EventArgs e)
+        {
+            // 1.Check if the selection is correct(the value of both of the radio buttons)
+            //2a.If correct then give passive agressive correct message using a service call and display it
+            // then set the global song path to null. so that when the user presses play, a new song is played
+            //also reset buttons.
+            //also increase the round number
+            //clear radio buttons
+            //2b. If wrong then deduct points and the round keeps going
+
+        }
     }
 }
