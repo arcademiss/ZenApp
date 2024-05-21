@@ -397,9 +397,10 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
-
 serviceDependencies.json
 serviceDependencies.local.json
 Web.config
 Web.Debug.config
-Web.Release.Config
+Web.Release.config
+
+

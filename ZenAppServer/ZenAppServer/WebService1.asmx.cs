@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Services;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Web.Services;
 namespace ZenAppServer
 {
     /// <summary>
@@ -26,6 +24,10 @@ namespace ZenAppServer
         {
             return "Hello World";
         }
+
+
+
+        public string connectionString = ConfigurationManager.ConnectionStrings["ZenAppConnectionString"].ConnectionString;
 
         [WebMethod]
         public string GetSongNameById(int songId)
