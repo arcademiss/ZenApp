@@ -27,7 +27,7 @@ namespace ZenAppServer
 
 
 
-        public string connectionString = ConfigurationManager.ConnectionStrings["ZenAppConnectionString"].ConnectionString;
+        
 
         [WebMethod]
         public string GetSongNameById(int songId)
