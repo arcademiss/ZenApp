@@ -103,14 +103,14 @@ namespace ZenAppClient
 
         private void buttonGiveUp_Click(object sender, EventArgs e)
         {
-            //1.Display message box, passive agressive
-            //TODO: get random passive agressive text.
+            //1.Display message box, "Wow you suck!"
+            
 
             MessageBox.Show("hAH KYS");
 
 
             //2.Decrease zen points
-            ZenPoints -= 200;
+            ZenPoints = ZenPoints - roundNumber * 200;
             update_ZenPointsLabel(); // update zen points label
             //3. Increase the round count
             roundNumber++;
@@ -118,7 +118,7 @@ namespace ZenAppClient
             if(roundNumber > 3)
             {
                 //TODO:Create form asking for name
-                FormEndGame formEndGame = new FormEndGame();
+                FormEndGame formEndGame = new FormEndGame(ZenPoints, service);
                 formEndGame.ShowDialog();
                 game_reset();
                 //TODO: add name and points to database

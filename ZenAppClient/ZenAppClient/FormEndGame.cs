@@ -12,9 +12,11 @@ namespace ZenAppClient
 {
     public partial class FormEndGame : Form
     {
-        public FormEndGame()
+        public FormEndGame(int ZenPoints, ZenAppClient.ServiceReference1.WebService1SoapClient service)
         {
             InitializeComponent();
         }
+
+
     }
 }
