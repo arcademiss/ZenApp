@@ -31,6 +31,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.labelZenScorestatic = new System.Windows.Forms.Label();
             this.labelZenScore = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.buttonSubmitScore = new System.Windows.Forms.Button();
+            this.textUsername = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -62,12 +65,41 @@
             this.labelZenScore.Size = new System.Drawing.Size(0, 42);
             this.labelZenScore.TabIndex = 2;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(168, 280);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(474, 16);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Input your name so you can go down in history as the \"best\" song guesser ever:";
+            // 
+            // buttonSubmitScore
+            // 
+            this.buttonSubmitScore.Location = new System.Drawing.Point(344, 400);
+            this.buttonSubmitScore.Name = "buttonSubmitScore";
+            this.buttonSubmitScore.Size = new System.Drawing.Size(95, 38);
+            this.buttonSubmitScore.TabIndex = 4;
+            this.buttonSubmitScore.Text = "Submit";
+            this.buttonSubmitScore.UseVisualStyleBackColor = true;
+            this.buttonSubmitScore.Click += new System.EventHandler(this.buttonSubmitScore_Click);
+            // 
+            // textUsername
+            // 
+            this.textUsername.Location = new System.Drawing.Point(319, 335);
+            this.textUsername.Name = "textUsername";
+            this.textUsername.Size = new System.Drawing.Size(141, 22);
+            this.textUsername.TabIndex = 5;
+            // 
             // FormEndGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ZenAppClient.Properties.Resources.hand_painted_watercolor_abstract_background_23_2148993785;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textUsername);
+            this.Controls.Add(this.buttonSubmitScore);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.labelZenScore);
             this.Controls.Add(this.labelZenScorestatic);
             this.Controls.Add(this.label1);
@@ -83,5 +115,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelZenScorestatic;
         private System.Windows.Forms.Label labelZenScore;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonSubmitScore;
+        private System.Windows.Forms.TextBox textUsername;
     }
 }
