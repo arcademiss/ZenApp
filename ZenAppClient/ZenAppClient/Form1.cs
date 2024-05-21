@@ -191,13 +191,35 @@ namespace ZenAppClient
 
         private void buttonGuess_Click(object sender, EventArgs e)
         {
-            // 1.Check if the selection is correct(the value of both of the radio buttons)
-            //2a.If correct then give passive agressive correct message using a service call and display it
-            // then set the global song path to null. so that when the user presses play, a new song is played
-            //also reset buttons.
-            //also increase the round number
-            //clear radio buttons
-            //2b. If wrong then deduct points and the round keeps going
+            //0. Generate selection
+
+            //the snipped bellow creats two radio button instances with the radio buttons containing our selection
+            RadioButton selectedYear = groupYears.Controls
+                .OfType<RadioButton>()
+                .FirstOrDefault(r => r.Checked);
+            RadioButton selectedCountry = groupBoxCountries.Controls
+                .OfType<RadioButton>()
+                .FirstOrDefault(r => r.Checked);
+
+            if(selectedYear == null || selectedCountry == null)//check if the user selected corectly
+            {
+                MessageBox.Show("Make sure you have selected both a country and an year!");
+            }
+            else
+            {
+                MessageBox.Show($"Selected: Country: {selectedCountry.Text} and Year: {selectedYear.Text}");
+                String year = selectedYear.Text;
+                String country = selectedCountry.Text;
+                // 1.Check if the selection is correct(the value of both of the radio buttons)
+                //2a.If correct then give passive agressive correct message using a service call and display it
+                // then set the global song path to null. so that when the user presses play, a new song is played
+                //also reset buttons.
+                //also increase the round number
+                //clear radio buttons
+                //2b. If wrong then deduct points and the round keeps going
+            }
+
+
 
         }
     }
