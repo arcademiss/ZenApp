@@ -106,7 +106,7 @@ namespace ZenAppClient
             //1.Display message box, "Wow you suck!"
             
 
-            MessageBox.Show("hAH KYS");
+            MessageBox.Show("Do you feel Zen?");
 
 
             //2.Decrease zen points
@@ -126,6 +126,7 @@ namespace ZenAppClient
             }
             update_RoundLabel();
             //4b.Pick a new song(set the global path to null).
+            existingPath = null;
         }
 
         private void game_reset()
