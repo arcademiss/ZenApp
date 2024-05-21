@@ -19,6 +19,7 @@ namespace ZenAppClient
             
             InitializeComponent();
             labelZenPoints.Text = ZenPoints.ToString();
+            update_RoundLabel();
 
 
         }
@@ -110,9 +111,10 @@ namespace ZenAppClient
 
             //2.Decrease zen points
             ZenPoints -= 200;
-
+            update_ZenPointsLabel(); // update zen points label
             //3. Increase the round count
             roundNumber++;
+            update_RoundLabel();
             //4a. If it is greater than 3 then ask the user for their name and finish the game.
             if(roundNumber > 3)
             {
@@ -121,6 +123,11 @@ namespace ZenAppClient
                 //when the data is sent to the database and the form is closed the game is also closed
             }
             //4b.Pick a new song(set the global path to null).
+        }
+
+        private void update_RoundLabel()
+        {
+            labelRound.Text = "Round: " + roundNumber.ToString() + "/3";
         }
 
         private void update_ZenPointsLabel()

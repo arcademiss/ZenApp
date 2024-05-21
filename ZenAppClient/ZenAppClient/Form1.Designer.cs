@@ -57,6 +57,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelZenPoints = new System.Windows.Forms.Label();
+            this.labelRound = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -316,12 +317,22 @@
             this.labelZenPoints.TabIndex = 29;
             this.labelZenPoints.Text = "label1";
             // 
+            // labelRound
+            // 
+            this.labelRound.AutoSize = true;
+            this.labelRound.Location = new System.Drawing.Point(90, 19);
+            this.labelRound.Name = "labelRound";
+            this.labelRound.Size = new System.Drawing.Size(50, 16);
+            this.labelRound.TabIndex = 30;
+            this.labelRound.Text = "Round:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1081, 646);
+            this.Controls.Add(this.labelRound);
             this.Controls.Add(this.labelZenPoints);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBox2);
@@ -388,6 +399,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label labelZenPoints;
+        private System.Windows.Forms.Label labelRound;
     }
 }
 
