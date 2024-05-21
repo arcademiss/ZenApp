@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Web.Services;
-
 namespace ZenAppServer
 {
     /// <summary>
@@ -21,6 +20,39 @@ namespace ZenAppServer
         public string HelloWorld()
         {
             return "Hello World";
+        }
+
+
+
+        public string connectionString = ConfigurationManager.ConnectionStrings["ZenAppConnectionString"].ConnectionString;
+
+        [WebMethod]
+        public string GetSongNameById(int songId)
+        {
+            string songName = "";
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string sql = "SELECT SongName FROM Songs WHERE Id = @Id";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@Id", songId);
+                        object result = command.ExecuteScalar();
+                        if (result != null)
+                        {
+                            songName = result.ToString();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions, e.g., log or return error message
+                songName = "Error: " + ex.Message;
+            }
+            return songName;
         }
     }
 }
