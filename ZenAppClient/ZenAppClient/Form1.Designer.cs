@@ -49,7 +49,7 @@
             this.button_Spain = new System.Windows.Forms.Button();
             this.button_Hint_Year = new System.Windows.Forms.Button();
             this.button_Hint_Country = new System.Windows.Forms.Button();
-            this.button1_Leaderboard = new System.Windows.Forms.Button();
+            this.buttonLeaderboard = new System.Windows.Forms.Button();
             this.label_ZenPoints = new System.Windows.Forms.Label();
             this.buttonPlaySong = new System.Windows.Forms.Button();
             this.buttonGiveUp = new System.Windows.Forms.Button();
@@ -242,15 +242,17 @@
             this.button_Hint_Country.TabIndex = 19;
             this.button_Hint_Country.Text = "Hint Country";
             this.button_Hint_Country.UseVisualStyleBackColor = true;
+            this.button_Hint_Country.Click += new System.EventHandler(this.button_Hint_Country_Click);
             // 
-            // button1_Leaderboard
+            // buttonLeaderboard
             // 
-            this.button1_Leaderboard.Location = new System.Drawing.Point(958, 292);
-            this.button1_Leaderboard.Name = "button1_Leaderboard";
-            this.button1_Leaderboard.Size = new System.Drawing.Size(110, 46);
-            this.button1_Leaderboard.TabIndex = 20;
-            this.button1_Leaderboard.Text = "Leaderboard";
-            this.button1_Leaderboard.UseVisualStyleBackColor = true;
+            this.buttonLeaderboard.Location = new System.Drawing.Point(958, 292);
+            this.buttonLeaderboard.Name = "buttonLeaderboard";
+            this.buttonLeaderboard.Size = new System.Drawing.Size(110, 46);
+            this.buttonLeaderboard.TabIndex = 20;
+            this.buttonLeaderboard.Text = "Leaderboard";
+            this.buttonLeaderboard.UseVisualStyleBackColor = true;
+            this.buttonLeaderboard.Click += new System.EventHandler(this.buttonLeaderboard_Click);
             // 
             // label_ZenPoints
             // 
@@ -340,7 +342,7 @@
             this.Controls.Add(this.buttonGiveUp);
             this.Controls.Add(this.buttonPlaySong);
             this.Controls.Add(this.label_ZenPoints);
-            this.Controls.Add(this.button1_Leaderboard);
+            this.Controls.Add(this.buttonLeaderboard);
             this.Controls.Add(this.button_Hint_Country);
             this.Controls.Add(this.button_Hint_Year);
             this.Controls.Add(this.button_Spain);
@@ -391,7 +393,7 @@
         private System.Windows.Forms.Button button_Spain;
         private System.Windows.Forms.Button button_Hint_Year;
         private System.Windows.Forms.Button button_Hint_Country;
-        private System.Windows.Forms.Button button1_Leaderboard;
+        private System.Windows.Forms.Button buttonLeaderboard;
         private System.Windows.Forms.Label label_ZenPoints;
         private System.Windows.Forms.Button buttonPlaySong;
         private System.Windows.Forms.Button buttonGiveUp;

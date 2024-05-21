@@ -101,6 +101,12 @@
     <Compile Include="FormEndGame.Designer.cs">
       <DependentUpon>FormEndGame.cs</DependentUpon>
     </Compile>
+    <Compile Include="LeadearBoardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LeadearBoardForm.Designer.cs">
+      <DependentUpon>LeadearBoardForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -109,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormEndGame.resx">
       <DependentUpon>FormEndGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LeadearBoardForm.resx">
+      <DependentUpon>LeadearBoardForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

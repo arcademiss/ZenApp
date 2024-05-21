@@ -153,6 +153,29 @@ namespace ZenAppClient
             audioFileReader?.Dispose();
             base.OnFormClosing(e);
         }
+
+        private void buttonLeaderboard_Click(object sender, EventArgs e)
+        {
+            /// This function fetches the leaderboard and displays it in a new form
+            List<string> leaderboard = new List<string>
+            {
+                "1. Alice - 1500 points",
+            "2. Bob - 1400 points",
+            "3. Carol - 1300 points",
+            "4. Dave - 1200 points",
+            "5. Eve - 1100 points"
+            };
+
+            LeadearBoardForm leadearBoardForm = new LeadearBoardForm(leaderboard);
+            leadearBoardForm.ShowDialog();
+            //TODO: replace with service call and populate the list
         
+            
+        }
+
+        private void button_Hint_Country_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
