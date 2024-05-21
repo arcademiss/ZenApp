@@ -175,7 +175,7 @@ namespace ZenAppClient
 
         private void button_Hint_Year_Click(object sender, EventArgs e)
         {
-            button_Hint_Country.Enabled = false;
+            button_Hint_Year.Enabled = false;
             MessageBox.Show("The year is " + "1970" + " or whatever.");// replace 1970 with service call
             ZenPoints -= 200;
             update_ZenPointsLabel();
