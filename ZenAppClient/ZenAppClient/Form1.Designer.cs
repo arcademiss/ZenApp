@@ -51,12 +51,12 @@
             this.button_Hint_Country = new System.Windows.Forms.Button();
             this.button1_Leaderboard = new System.Windows.Forms.Button();
             this.label_ZenPoints = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button_Play = new System.Windows.Forms.Button();
-            this.button_Give_Up = new System.Windows.Forms.Button();
+            this.buttonPlaySong = new System.Windows.Forms.Button();
+            this.buttonGiveUp = new System.Windows.Forms.Button();
             this.button_Suggestion = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.labelZenPoints = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,7 +68,6 @@
             this.button_1950.TabIndex = 0;
             this.button_1950.Text = "1950";
             this.button_1950.UseVisualStyleBackColor = true;
-            this.button_1950.Click += new System.EventHandler(this.button_1950_Click);
             // 
             // button_1960
             // 
@@ -171,6 +170,7 @@
             // 
             // button_Germany
             // 
+            this.button_Germany.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_Germany.Location = new System.Drawing.Point(466, 508);
             this.button_Germany.Name = "button_Germany";
             this.button_Germany.Size = new System.Drawing.Size(75, 126);
@@ -198,16 +198,17 @@
             // 
             // button_Romania
             // 
+            this.button_Romania.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_Romania.Location = new System.Drawing.Point(709, 508);
             this.button_Romania.Name = "button_Romania";
-            this.button_Romania.Size = new System.Drawing.Size(75, 126);
+            this.button_Romania.Size = new System.Drawing.Size(91, 126);
             this.button_Romania.TabIndex = 15;
             this.button_Romania.Text = "Romania";
             this.button_Romania.UseVisualStyleBackColor = true;
             // 
             // button_India
             // 
-            this.button_India.Location = new System.Drawing.Point(790, 508);
+            this.button_India.Location = new System.Drawing.Point(806, 508);
             this.button_India.Name = "button_India";
             this.button_India.Size = new System.Drawing.Size(75, 126);
             this.button_India.TabIndex = 16;
@@ -216,7 +217,7 @@
             // 
             // button_Spain
             // 
-            this.button_Spain.Location = new System.Drawing.Point(871, 508);
+            this.button_Spain.Location = new System.Drawing.Point(887, 508);
             this.button_Spain.Name = "button_Spain";
             this.button_Spain.Size = new System.Drawing.Size(75, 126);
             this.button_Spain.TabIndex = 17;
@@ -243,9 +244,9 @@
             // 
             // button1_Leaderboard
             // 
-            this.button1_Leaderboard.Location = new System.Drawing.Point(972, 292);
+            this.button1_Leaderboard.Location = new System.Drawing.Point(958, 292);
             this.button1_Leaderboard.Name = "button1_Leaderboard";
-            this.button1_Leaderboard.Size = new System.Drawing.Size(96, 46);
+            this.button1_Leaderboard.Size = new System.Drawing.Size(110, 46);
             this.button1_Leaderboard.TabIndex = 20;
             this.button1_Leaderboard.Text = "Leaderboard";
             this.button1_Leaderboard.UseVisualStyleBackColor = true;
@@ -259,36 +260,31 @@
             this.label_ZenPoints.TabIndex = 21;
             this.label_ZenPoints.Text = "ZenPoints";
             // 
-            // textBox1
+            // buttonPlaySong
             // 
-            this.textBox1.Location = new System.Drawing.Point(968, 61);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 22;
+            this.buttonPlaySong.Location = new System.Drawing.Point(499, 417);
+            this.buttonPlaySong.Name = "buttonPlaySong";
+            this.buttonPlaySong.Size = new System.Drawing.Size(74, 74);
+            this.buttonPlaySong.TabIndex = 23;
+            this.buttonPlaySong.Text = "Play";
+            this.buttonPlaySong.UseVisualStyleBackColor = true;
+            this.buttonPlaySong.Click += new System.EventHandler(this.buttonPlaySong_Click);
             // 
-            // button_Play
+            // buttonGiveUp
             // 
-            this.button_Play.Location = new System.Drawing.Point(499, 417);
-            this.button_Play.Name = "button_Play";
-            this.button_Play.Size = new System.Drawing.Size(74, 74);
-            this.button_Play.TabIndex = 23;
-            this.button_Play.Text = "Play";
-            this.button_Play.UseVisualStyleBackColor = true;
-            // 
-            // button_Give_Up
-            // 
-            this.button_Give_Up.Location = new System.Drawing.Point(972, 155);
-            this.button_Give_Up.Name = "button_Give_Up";
-            this.button_Give_Up.Size = new System.Drawing.Size(96, 46);
-            this.button_Give_Up.TabIndex = 25;
-            this.button_Give_Up.Text = "Give Up";
-            this.button_Give_Up.UseVisualStyleBackColor = true;
+            this.buttonGiveUp.Location = new System.Drawing.Point(958, 155);
+            this.buttonGiveUp.Name = "buttonGiveUp";
+            this.buttonGiveUp.Size = new System.Drawing.Size(110, 46);
+            this.buttonGiveUp.TabIndex = 25;
+            this.buttonGiveUp.Text = "Give Up";
+            this.buttonGiveUp.UseVisualStyleBackColor = true;
+            this.buttonGiveUp.Click += new System.EventHandler(this.buttonGiveUp_Click);
             // 
             // button_Suggestion
             // 
-            this.button_Suggestion.Location = new System.Drawing.Point(972, 223);
+            this.button_Suggestion.Location = new System.Drawing.Point(958, 223);
             this.button_Suggestion.Name = "button_Suggestion";
-            this.button_Suggestion.Size = new System.Drawing.Size(96, 46);
+            this.button_Suggestion.Size = new System.Drawing.Size(110, 46);
             this.button_Suggestion.TabIndex = 26;
             this.button_Suggestion.Text = "Suggestion";
             this.button_Suggestion.UseVisualStyleBackColor = true;
@@ -307,9 +303,18 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox1.Location = new System.Drawing.Point(441, -1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(181, 114);
+            this.pictureBox1.Size = new System.Drawing.Size(239, 114);
             this.pictureBox1.TabIndex = 28;
             this.pictureBox1.TabStop = false;
+            // 
+            // labelZenPoints
+            // 
+            this.labelZenPoints.AutoSize = true;
+            this.labelZenPoints.Location = new System.Drawing.Point(980, 67);
+            this.labelZenPoints.Name = "labelZenPoints";
+            this.labelZenPoints.Size = new System.Drawing.Size(44, 16);
+            this.labelZenPoints.TabIndex = 29;
+            this.labelZenPoints.Text = "label1";
             // 
             // Form1
             // 
@@ -317,12 +322,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1081, 646);
+            this.Controls.Add(this.labelZenPoints);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button_Suggestion);
-            this.Controls.Add(this.button_Give_Up);
-            this.Controls.Add(this.button_Play);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.buttonGiveUp);
+            this.Controls.Add(this.buttonPlaySong);
             this.Controls.Add(this.label_ZenPoints);
             this.Controls.Add(this.button1_Leaderboard);
             this.Controls.Add(this.button_Hint_Country);
@@ -347,7 +352,6 @@
             this.Controls.Add(this.button_1950);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -378,12 +382,12 @@
         private System.Windows.Forms.Button button_Hint_Country;
         private System.Windows.Forms.Button button1_Leaderboard;
         private System.Windows.Forms.Label label_ZenPoints;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button_Play;
-        private System.Windows.Forms.Button button_Give_Up;
+        private System.Windows.Forms.Button buttonPlaySong;
+        private System.Windows.Forms.Button buttonGiveUp;
         private System.Windows.Forms.Button button_Suggestion;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label labelZenPoints;
     }
 }
 

@@ -16,7 +16,9 @@ namespace ZenAppClient
         ZenAppClient.ServiceReference1.WebService1SoapClient service = new ServiceReference1.WebService1SoapClient();
         public Form1()
         {
+            
             InitializeComponent();
+            labelZenPoints.Text = ZenPoints.ToString();
 
 
         }
@@ -121,6 +123,10 @@ namespace ZenAppClient
             //4b.Pick a new song(set the global path to null).
         }
 
+        private void update_ZenPointsLabel()
+        {
+            labelZenPoints.Text = ZenPoints.ToString();
+        }
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             waveOut?.Stop();
