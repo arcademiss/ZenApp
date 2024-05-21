@@ -8,6 +8,12 @@
       "type": "mssql.local",
       "connectionId": "ZenAppConnectionString",
       "dynamicId": null
+    },
+    "mssql2": {
+      "serviceConnectorResourceId": "",
+      "secretStore": "LocalSecretsFile",
+      "type": "mssql.local",
+      "connectionId": "ZenAppConnectionStrings"
     }
   }
 }
