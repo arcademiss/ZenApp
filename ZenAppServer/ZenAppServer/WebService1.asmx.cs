@@ -57,8 +57,8 @@ namespace ZenAppServer
                         Id = reader.GetInt32(0),
                         SongCountry = reader.GetString(1),
                         SongYear = reader.GetInt32(2),
-                        SongArtist = reader.GetString(3),
-                        SongName = reader.GetString(4),
+                        SongArtist = reader.GetString(4),
+                        SongName = reader.GetString(3),
                         SongLink = reader.GetString(5),
                         SongPath = reader.GetString(6)
                     };
@@ -68,7 +68,7 @@ namespace ZenAppServer
         }
 
         [WebMethod]
-        public bool VerifyGuess(int Id, string guessedYear, string guessedCountry)
+        public bool VerifyGuess(int Id, int guessedYear, string guessedCountry)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -79,7 +79,7 @@ namespace ZenAppServer
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
-                    string actualYear = reader.GetString(0);
+                    int actualYear = reader.GetInt32(0);
                     string actualCountry = reader.GetString(1);
                     return actualYear == guessedYear && actualCountry == guessedCountry;
                 }

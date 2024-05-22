@@ -459,13 +459,14 @@
             // 
             // labelMessage
             // 
-            this.labelMessage.AutoSize = true;
+            this.labelMessage.BackColor = System.Drawing.Color.Transparent;
             this.labelMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMessage.Location = new System.Drawing.Point(280, 140);
+            this.labelMessage.Location = new System.Drawing.Point(137, 109);
+            this.labelMessage.MaximumSize = new System.Drawing.Size(532, 210);
             this.labelMessage.Name = "labelMessage";
-            this.labelMessage.Size = new System.Drawing.Size(76, 26);
+            this.labelMessage.Size = new System.Drawing.Size(532, 210);
             this.labelMessage.TabIndex = 34;
-            this.labelMessage.Text = "label1";
+            this.labelMessage.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Form1
             // 

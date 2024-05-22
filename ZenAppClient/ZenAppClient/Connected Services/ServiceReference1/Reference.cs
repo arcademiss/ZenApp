@@ -170,7 +170,7 @@ namespace ZenAppClient.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetRandomSong", ReplyAction="*")]
         System.Threading.Tasks.Task<ZenAppClient.ServiceReference1.GetRandomSongResponse> GetRandomSongAsync(ZenAppClient.ServiceReference1.GetRandomSongRequest request);
         
-        // CODEGEN: Generating message contract since element name guessedYear from namespace http://tempuri.org/ is not marked nillable
+        // CODEGEN: Generating message contract since element name guessedCountry from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/VerifyGuess", ReplyAction="*")]
         ZenAppClient.ServiceReference1.VerifyGuessResponse VerifyGuess(ZenAppClient.ServiceReference1.VerifyGuessRequest request);
         
@@ -368,8 +368,8 @@ namespace ZenAppClient.ServiceReference1 {
         [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
         public int Id;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string guessedYear;
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public int guessedYear;
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
         public string guessedCountry;
@@ -377,7 +377,7 @@ namespace ZenAppClient.ServiceReference1 {
         public VerifyGuessRequestBody() {
         }
         
-        public VerifyGuessRequestBody(int Id, string guessedYear, string guessedCountry) {
+        public VerifyGuessRequestBody(int Id, int guessedYear, string guessedCountry) {
             this.Id = Id;
             this.guessedYear = guessedYear;
             this.guessedCountry = guessedCountry;
@@ -828,7 +828,7 @@ namespace ZenAppClient.ServiceReference1 {
             return base.Channel.VerifyGuess(request);
         }
         
-        public bool VerifyGuess(int Id, string guessedYear, string guessedCountry) {
+        public bool VerifyGuess(int Id, int guessedYear, string guessedCountry) {
             ZenAppClient.ServiceReference1.VerifyGuessRequest inValue = new ZenAppClient.ServiceReference1.VerifyGuessRequest();
             inValue.Body = new ZenAppClient.ServiceReference1.VerifyGuessRequestBody();
             inValue.Body.Id = Id;
@@ -843,7 +843,7 @@ namespace ZenAppClient.ServiceReference1 {
             return base.Channel.VerifyGuessAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ZenAppClient.ServiceReference1.VerifyGuessResponse> VerifyGuessAsync(int Id, string guessedYear, string guessedCountry) {
+        public System.Threading.Tasks.Task<ZenAppClient.ServiceReference1.VerifyGuessResponse> VerifyGuessAsync(int Id, int guessedYear, string guessedCountry) {
             ZenAppClient.ServiceReference1.VerifyGuessRequest inValue = new ZenAppClient.ServiceReference1.VerifyGuessRequest();
             inValue.Body = new ZenAppClient.ServiceReference1.VerifyGuessRequestBody();
             inValue.Body.Id = Id;

@@ -32,6 +32,7 @@ namespace ZenAppClient
         private int ZenPoints = 1000;
         private int roundNumber = 1;
         private int currentSong;
+        private string currentSongArtist;
 
         private void buttonPlaySong_Click(object sender, EventArgs e)
         {  
@@ -63,6 +64,7 @@ namespace ZenAppClient
                 //TODO: path2Song=service.GetRandomSong
                 ZenAppClient.ServiceReference1.Song song = service.GetRandomSong();
                 currentSong = song.Id;
+                currentSongArtist = song.SongArtist;
                 path2Song = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "dwnl", song.SongPath);
                 existingPath = path2Song;
             }
@@ -116,6 +118,10 @@ namespace ZenAppClient
             //2.Decrease zen points
             ZenPoints = ZenPoints - roundNumber * 200;
             update_ZenPointsLabel(); // update zen points label
+            ClearRadioButtonSelectionFromGroupBox(groupBoxCountries);
+            ClearRadioButtonSelectionFromGroupBox(groupYears);
+            //reset controls
+
             //3. Increase the round count
             roundNumber++;
             //4a. If it is greater than 3 then ask the user for their name and finish the game.
@@ -125,7 +131,7 @@ namespace ZenAppClient
                 FormEndGame formEndGame = new FormEndGame(ZenPoints, service);
                 formEndGame.ShowDialog();
                 game_reset();
-                //TODO: add name and points to database
+                
                 
             }
             update_RoundLabel();
@@ -215,20 +221,67 @@ namespace ZenAppClient
             }
             else
             {
-                MessageBox.Show($"Selected: Country: {selectedCountry.Text} and Year: {selectedYear.Text}");
-                String year = selectedYear.Text;
+               // MessageBox.Show($"Selected: Country: {selectedCountry.Text} and Year: {selectedYear.Text}");
+                int year = Int32.Parse(selectedYear.Text);
                 String country = selectedCountry.Text;
                 // 1.Check if the selection is correct(the value of both of the radio buttons)
-                //2a.If correct then give passive agressive correct message using a service call and display it
-                // then set the global song path to null. so that when the user presses play, a new song is played
-                //also reset buttons.
-                //also increase the round number
-                //clear radio buttons
-                //2b. If wrong then deduct points and the round keeps going
+                if(service.VerifyGuess(currentSong, year, country))
+                {
+                    //2a.If correct then give passive agressive correct message using a service call and display it
+                    // then set the global song path to null. so that when the user presses play, a new song is played
+                    //also reset buttons.
+                    //also increase the round number
+                    //clear radio buttons
+
+                    
+                    ClearRadioButtonSelectionFromGroupBox(groupYears);
+                    ClearRadioButtonSelectionFromGroupBox(groupBoxCountries);
+                    roundNumber++;
+                    update_RoundLabel();
+                    existingPath = null;
+                    displayAnnoyingMessage(service.GetRandomAnswer(true));
+                    MessageBox.Show("The song was " + service.GetSongNameById(currentSong) + " by " + currentSongArtist);
+                    if (roundNumber > 3)
+                    {
+
+                        FormEndGame formEndGame = new FormEndGame(ZenPoints, service);
+                        formEndGame.ShowDialog();
+                        game_reset();
+                        //TODO: add name and points to database
+                        update_RoundLabel();
+                        //4b.Pick a new song(set the global path to null).
+                        existingPath = null;
+                    }
+
+                }
+                else
+                {
+                    //2b. If wrong then deduct points and the round keeps goingelse
+                    ZenPoints -= 100;
+                    update_ZenPointsLabel();
+                    displayAnnoyingMessage(service.GetRandomAnswer(false));
+                }
+
+
             }
 
 
 
+        }
+
+        private void displayAnnoyingMessage(string v)
+        {
+            labelMessage.Text=v;
+        }
+
+        private void ClearRadioButtonSelectionFromGroupBox(GroupBox groupBox)
+        {
+            foreach (var radioButton in groupBox.Controls.OfType<RadioButton>())
+            {
+                radioButton.Checked = false;
+            }
+            button_Hint_Country.Enabled = true;
+            button_Hint_Year.Enabled = true;
         }
 
         private void Form1_Load(object sender, EventArgs e)
