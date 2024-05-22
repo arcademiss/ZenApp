@@ -56,7 +56,7 @@ namespace ZenAppServer
                     {
                         Id = reader.GetInt32(0),
                         SongCountry = reader.GetString(1),
-                        SongYear = reader.GetString(2),
+                        SongYear = reader.GetInt32(2),
                         SongArtist = reader.GetString(3),
                         SongName = reader.GetString(4),
                         SongLink = reader.GetString(5)
@@ -155,7 +155,7 @@ namespace ZenAppServer
                     {
                         Id = reader.GetInt32(0),
                         SongCountry = reader.GetString(1),
-                        SongYear = reader.GetString(2),
+                        SongYear = reader.GetInt32(2),
                         SongArtist = reader.GetString(3),
                         SongName = reader.GetString(4),
                         SongLink = reader.GetString(5)
@@ -170,7 +170,7 @@ namespace ZenAppServer
     {
         public int Id { get; set; }
         public string SongCountry { get; set; }
-        public string SongYear { get; set; }
+        public int SongYear { get; set; }
         public string SongArtist { get; set; }
         public string SongName { get; set; }
         public string SongLink { get; set; }
