@@ -33,10 +33,11 @@ namespace ZenAppClient
             else
             {
 
-                MessageBox.Show("Score " + score.ToString() + " Name " + name);
+                //MessageBox.Show("Score " + score.ToString() + " Name " + name);
+                service.UpdatePoints(get_username(), get_score());
                 this.Close();
             }
-                // TODO: Replace the message box with a service call to the method that updates the leaderboard table.
+                
 
 
             }

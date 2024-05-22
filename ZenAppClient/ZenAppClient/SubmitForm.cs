@@ -13,10 +13,13 @@ using static System.Windows.Forms.LinkLabel;
 namespace ZenAppClient
 {
     public partial class SubmitForm : Form
-    {
-        public SubmitForm()
+    {   
+        private ZenAppClient.ServiceReference1.WebService1SoapClient service;
+        public SubmitForm(ZenAppClient.ServiceReference1.WebService1SoapClient service)
         {
             InitializeComponent();
+            this.service = service;
+            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -48,7 +51,7 @@ namespace ZenAppClient
                 return;
             }
 
-
+            //TODO: implement the sending of data to the server. service.insertSuggestion(param)
             
             }
 

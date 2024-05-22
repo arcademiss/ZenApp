@@ -31,6 +31,7 @@ namespace ZenAppClient
         private String existingPath=null;
         private int ZenPoints = 1000;
         private int roundNumber = 1;
+        private int currentSong;
 
         private void buttonPlaySong_Click(object sender, EventArgs e)
         {  
@@ -60,8 +61,9 @@ namespace ZenAppClient
             else
             {
                 //TODO: path2Song=service.GetRandomSong
-                String song = service.GetRandomSong().SongPath;
-                path2Song = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "dwnl", song);
+                ZenAppClient.ServiceReference1.Song song = service.GetRandomSong();
+                currentSong = song.Id;
+                path2Song = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "dwnl", song.SongPath);
                 existingPath = path2Song;
             }
 
@@ -178,7 +180,9 @@ namespace ZenAppClient
         private void button_Hint_Year_Click(object sender, EventArgs e)
         {
             button_Hint_Year.Enabled = false;
-            MessageBox.Show("The year is " + "1970" + " or whatever.");// replace 1970 with service call
+            int year;
+            year =Int32.Parse(service.GetHintYear(currentSong));
+            MessageBox.Show("The year is " + year + " or whatever.");// replace 1970 with service call
             ZenPoints -= 200;
             update_ZenPointsLabel();
         }
@@ -186,7 +190,9 @@ namespace ZenAppClient
         private void button_Hint_Country_Click(object sender, EventArgs e)
         {
             button_Hint_Country.Enabled = false;
-            MessageBox.Show("The country is " + "China" + " or nearby.");// replace China with service call
+            String country;
+            country = service.GetHintCountry(currentSong);
+            MessageBox.Show("The country is " + country + " or nearby.");// replace China with service call
             ZenPoints -= 200;
             update_ZenPointsLabel();
         }
@@ -232,7 +238,7 @@ namespace ZenAppClient
 
         private void button_Suggestion_Click(object sender, EventArgs e)
         {
-            SubmitForm submitform = new SubmitForm();
+            SubmitForm submitform = new SubmitForm(service);
             submitform.Show();
         }
     }
