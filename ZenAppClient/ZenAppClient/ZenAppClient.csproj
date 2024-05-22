@@ -178,5 +178,12 @@
   <ItemGroup>
     <None Include="Resources\easter_egg.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="sql scripts\CreateTableSongs.txt" />
+    <Content Include="sql scripts\PopulateSongsTable.txt" />
+    <Content Include="sql scripts\CreateAnswersTable.txt" />
+    <Content Include="sql scripts\PopulateAnswers1.txt" />
+    <Content Include="sql scripts\PopulateAnswers2.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
