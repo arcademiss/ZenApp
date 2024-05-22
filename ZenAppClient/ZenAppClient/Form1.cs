@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
 using NAudio.Wave;
+using System.IO;
 namespace ZenAppClient
 {
     public partial class Form1 : Form
@@ -59,7 +60,7 @@ namespace ZenAppClient
             else
             {
                 //TODO: path2Song=service.GetRandomSong
-                path2Song = "C:\\an3\\s2\\II\\dwnl\\Creep [Explicit].mp4";
+                path2Song = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "dwnl", "Alone.mp4");
                 existingPath = path2Song;
             }
 
