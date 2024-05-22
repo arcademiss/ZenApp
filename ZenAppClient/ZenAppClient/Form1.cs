@@ -119,12 +119,12 @@ namespace ZenAppClient
             //4a. If it is greater than 3 then ask the user for their name and finish the game.
             if(roundNumber > 3)
             {
-                //TODO:Create form asking for name
+                
                 FormEndGame formEndGame = new FormEndGame(ZenPoints, service);
                 formEndGame.ShowDialog();
                 game_reset();
                 //TODO: add name and points to database
-                //when the data is sent to the database and the form is closed the game is also closed
+                
             }
             update_RoundLabel();
             //4b.Pick a new song(set the global path to null).

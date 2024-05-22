@@ -1,1 +1,1 @@
-﻿CREATE TABLE [dbo].[LeaderBoard] ( [Id] INT NOT NULL PRIMARY KEY, [userId] NVARCHAR(MAX) NOT NULL, [Points] int NOT NULL )
+﻿CREATE TABLE [dbo].[LeaderBoard] ([userId] NVARCHAR(MAX) NOT NULL, [Points] int NOT NULL )

@@ -131,7 +131,17 @@ namespace ZenAppServer
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "UPDATE Users SET Points = Points + @Points WHERE UserId = @UserId";
+                string query = @"
+MERGE LeaderBoard AS target
+USING (SELECT @UserId AS UserId, @Points AS Points) AS source
+ON (target.UserId = source.UserId)
+WHEN MATCHED THEN 
+    UPDATE SET Points = source.Points + target.Points
+WHEN NOT MATCHED THEN 
+    INSERT (UserId, Points) 
+    VALUES (source.UserId, source.Points);
+";
+
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Points", points);
                 cmd.Parameters.AddWithValue("@UserId", userId);
