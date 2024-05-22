@@ -1,0 +1,17 @@
+﻿INSERT INTO [dbo].[Answers] ([Id], [Answer], [Correct])
+VALUES
+(1, 'Wow, even a broken clock is right twice a day. Guess today''s not your day.', 0),
+(2, 'Must be tough being consistently inconsistent.', 0),
+(3, 'Nice try, but you might want to upgrade your guessing skills.', 0),
+(4, 'I''ll give you an A+ for effort, but unfortunately, that''s not the answer.', 0),
+(5, 'Did you even try? Or is this your version of guessing?', 0),
+(6, 'Maybe next time you''ll come prepared. Or maybe not.', 0),
+(7, 'It''s cute how you think that was even close.', 0),
+(8, 'If at first, you don''t succeed... try again, or just give up, whatever works.', 0),
+(9, 'Well, that was a swing and a miss. Better luck next time?', 0),
+(10, 'Interesting strategy, guessing wrong every time.', 0),
+(11, 'Are you trying to test my patience or your own guessing abilities?', 0),
+(12, 'You''re really pushing the boundaries of ''guessing,'' aren''t you?', 0),
+(13, 'You''re consistently surprising... but not in a good way.', 0),
+(14, 'It''s like you''re allergic to correct answers or something.', 0),
+(15, 'Congratulations, you''ve successfully achieved a new level of not knowing.', 0);

@@ -1,0 +1,10 @@
+﻿CREATE TABLE [dbo].[Songs] (
+    [Id]            INT  NOT NULL,
+    [SongCountry]   NVARCHAR(MAX) NOT NULL,
+    [SongYear]      INT  NOT NULL,
+    [SongName]      NVARCHAR(MAX) NOT NULL,
+    [SongArtist]    NVARCHAR(MAX) NOT NULL,
+    [SongLink]      NVARCHAR(MAX) NOT NULL,
+    [AudioFilePath] NVARCHAR(MAX) NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);

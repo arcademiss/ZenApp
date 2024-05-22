@@ -1,0 +1,27 @@
+﻿--UPDATE Songs
+--SET AudioFilePath = 'Stayin Alive (Official Music Video).mp4'
+--Where Id=119705;
+
+--UPDATE Songs
+--SET AudioFilePath = 'I Will Survive.mp4'
+--Where Id=119703;
+
+--UPDATE Songs
+--SET AudioFilePath = 'Life Is Good (Official Music Video).mp4'
+--Where Id=120204;
+
+--UPDATE Songs
+--SET AudioFilePath = 'Let It Be (Remastered 2009).mp4'
+--Where Id=119701;
+
+--UPDATE Songs
+--SET AudioFilePath = 'Alone.mp4'
+--Where Id=120109;
+
+--UPDATE Songs
+--SET AudioFilePath = 'Applause.mp4'
+--Where Id=120105;
+
+UPDATE Songs
+SET AudioFilePath = 'Wind Of Change PCM Version.mp4'
+Where Id=519901;

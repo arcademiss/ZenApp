@@ -9,60 +9,223 @@
 //------------------------------------------------------------------------------
 
 namespace ZenAppClient.ServiceReference1 {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Song", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class Song : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SongCountryField;
+        
+        private int SongYearField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SongArtistField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SongNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SongLinkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SongPathField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string SongCountry {
+            get {
+                return this.SongCountryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SongCountryField, value) != true)) {
+                    this.SongCountryField = value;
+                    this.RaisePropertyChanged("SongCountry");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int SongYear {
+            get {
+                return this.SongYearField;
+            }
+            set {
+                if ((this.SongYearField.Equals(value) != true)) {
+                    this.SongYearField = value;
+                    this.RaisePropertyChanged("SongYear");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string SongArtist {
+            get {
+                return this.SongArtistField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SongArtistField, value) != true)) {
+                    this.SongArtistField = value;
+                    this.RaisePropertyChanged("SongArtist");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string SongName {
+            get {
+                return this.SongNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SongNameField, value) != true)) {
+                    this.SongNameField = value;
+                    this.RaisePropertyChanged("SongName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string SongLink {
+            get {
+                return this.SongLinkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SongLinkField, value) != true)) {
+                    this.SongLinkField = value;
+                    this.RaisePropertyChanged("SongLink");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string SongPath {
+            get {
+                return this.SongPathField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SongPathField, value) != true)) {
+                    this.SongPathField = value;
+                    this.RaisePropertyChanged("SongPath");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.WebService1Soap")]
     public interface WebService1Soap {
         
-        // CODEGEN: Generating message contract since element name HelloWorldResult from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
-        ZenAppClient.ServiceReference1.HelloWorldResponse HelloWorld(ZenAppClient.ServiceReference1.HelloWorldRequest request);
+        // CODEGEN: Generating message contract since element name GetSongNameByIdResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetSongNameById", ReplyAction="*")]
+        ZenAppClient.ServiceReference1.GetSongNameByIdResponse GetSongNameById(ZenAppClient.ServiceReference1.GetSongNameByIdRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
-        System.Threading.Tasks.Task<ZenAppClient.ServiceReference1.HelloWorldResponse> HelloWorldAsync(ZenAppClient.ServiceReference1.HelloWorldRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetSongNameById", ReplyAction="*")]
+        System.Threading.Tasks.Task<ZenAppClient.ServiceReference1.GetSongNameByIdResponse> GetSongNameByIdAsync(ZenAppClient.ServiceReference1.GetSongNameByIdRequest request);
+        
+        // CODEGEN: Generating message contract since element name GetRandomSongResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetRandomSong", ReplyAction="*")]
+        ZenAppClient.ServiceReference1.GetRandomSongResponse GetRandomSong(ZenAppClient.ServiceReference1.GetRandomSongRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetRandomSong", ReplyAction="*")]
+        System.Threading.Tasks.Task<ZenAppClient.ServiceReference1.GetRandomSongResponse> GetRandomSongAsync(ZenAppClient.ServiceReference1.GetRandomSongRequest request);
+        
+        // CODEGEN: Generating message contract since element name guessedCountry from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/VerifyGuess", ReplyAction="*")]
+        ZenAppClient.ServiceReference1.VerifyGuessResponse VerifyGuess(ZenAppClient.ServiceReference1.VerifyGuessRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/VerifyGuess", ReplyAction="*")]
+        System.Threading.Tasks.Task<ZenAppClient.ServiceReference1.VerifyGuessResponse> VerifyGuessAsync(ZenAppClient.ServiceReference1.VerifyGuessRequest request);
+        
+        // CODEGEN: Generating message contract since element name GetHintYearResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetHintYear", ReplyAction="*")]
+        ZenAppClient.ServiceReference1.GetHintYearResponse GetHintYear(ZenAppClient.ServiceReference1.GetHintYearRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetHintYear", ReplyAction="*")]
+        System.Threading.Tasks.Task<ZenAppClient.ServiceReference1.GetHintYearResponse> GetHintYearAsync(ZenAppClient.ServiceReference1.GetHintYearRequest request);
+        
+        // CODEGEN: Generating message contract since element name GetHintCountryResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetHintCountry", ReplyAction="*")]
+        ZenAppClient.ServiceReference1.GetHintCountryResponse GetHintCountry(ZenAppClient.ServiceReference1.GetHintCountryRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetHintCountry", ReplyAction="*")]
+        System.Threading.Tasks.Task<ZenAppClient.ServiceReference1.GetHintCountryResponse> GetHintCountryAsync(ZenAppClient.ServiceReference1.GetHintCountryRequest request);
+        
+        // CODEGEN: Generating message contract since element name GetRandomAnswerResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetRandomAnswer", ReplyAction="*")]
+        ZenAppClient.ServiceReference1.GetRandomAnswerResponse GetRandomAnswer(ZenAppClient.ServiceReference1.GetRandomAnswerRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetRandomAnswer", ReplyAction="*")]
+        System.Threading.Tasks.Task<ZenAppClient.ServiceReference1.GetRandomAnswerResponse> GetRandomAnswerAsync(ZenAppClient.ServiceReference1.GetRandomAnswerRequest request);
+        
+        // CODEGEN: Generating message contract since element name userId from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UpdatePoints", ReplyAction="*")]
+        ZenAppClient.ServiceReference1.UpdatePointsResponse UpdatePoints(ZenAppClient.ServiceReference1.UpdatePointsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UpdatePoints", ReplyAction="*")]
+        System.Threading.Tasks.Task<ZenAppClient.ServiceReference1.UpdatePointsResponse> UpdatePointsAsync(ZenAppClient.ServiceReference1.UpdatePointsRequest request);
+        
+        // CODEGEN: Generating message contract since element name StartNewRoundResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/StartNewRound", ReplyAction="*")]
+        ZenAppClient.ServiceReference1.StartNewRoundResponse StartNewRound(ZenAppClient.ServiceReference1.StartNewRoundRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/StartNewRound", ReplyAction="*")]
+        System.Threading.Tasks.Task<ZenAppClient.ServiceReference1.StartNewRoundResponse> StartNewRoundAsync(ZenAppClient.ServiceReference1.StartNewRoundRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class HelloWorldRequest {
+    public partial class GetSongNameByIdRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="HelloWorld", Namespace="http://tempuri.org/", Order=0)]
-        public ZenAppClient.ServiceReference1.HelloWorldRequestBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetSongNameById", Namespace="http://tempuri.org/", Order=0)]
+        public ZenAppClient.ServiceReference1.GetSongNameByIdRequestBody Body;
         
-        public HelloWorldRequest() {
+        public GetSongNameByIdRequest() {
         }
         
-        public HelloWorldRequest(ZenAppClient.ServiceReference1.HelloWorldRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
-    public partial class HelloWorldRequestBody {
-        
-        public HelloWorldRequestBody() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class HelloWorldResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="HelloWorldResponse", Namespace="http://tempuri.org/", Order=0)]
-        public ZenAppClient.ServiceReference1.HelloWorldResponseBody Body;
-        
-        public HelloWorldResponse() {
-        }
-        
-        public HelloWorldResponse(ZenAppClient.ServiceReference1.HelloWorldResponseBody Body) {
+        public GetSongNameByIdRequest(ZenAppClient.ServiceReference1.GetSongNameByIdRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -71,16 +234,517 @@ namespace ZenAppClient.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class HelloWorldResponseBody {
+    public partial class GetSongNameByIdRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string HelloWorldResult;
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int songId;
         
-        public HelloWorldResponseBody() {
+        public GetSongNameByIdRequestBody() {
         }
         
-        public HelloWorldResponseBody(string HelloWorldResult) {
-            this.HelloWorldResult = HelloWorldResult;
+        public GetSongNameByIdRequestBody(int songId) {
+            this.songId = songId;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetSongNameByIdResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetSongNameByIdResponse", Namespace="http://tempuri.org/", Order=0)]
+        public ZenAppClient.ServiceReference1.GetSongNameByIdResponseBody Body;
+        
+        public GetSongNameByIdResponse() {
+        }
+        
+        public GetSongNameByIdResponse(ZenAppClient.ServiceReference1.GetSongNameByIdResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetSongNameByIdResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string GetSongNameByIdResult;
+        
+        public GetSongNameByIdResponseBody() {
+        }
+        
+        public GetSongNameByIdResponseBody(string GetSongNameByIdResult) {
+            this.GetSongNameByIdResult = GetSongNameByIdResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetRandomSongRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetRandomSong", Namespace="http://tempuri.org/", Order=0)]
+        public ZenAppClient.ServiceReference1.GetRandomSongRequestBody Body;
+        
+        public GetRandomSongRequest() {
+        }
+        
+        public GetRandomSongRequest(ZenAppClient.ServiceReference1.GetRandomSongRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class GetRandomSongRequestBody {
+        
+        public GetRandomSongRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetRandomSongResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetRandomSongResponse", Namespace="http://tempuri.org/", Order=0)]
+        public ZenAppClient.ServiceReference1.GetRandomSongResponseBody Body;
+        
+        public GetRandomSongResponse() {
+        }
+        
+        public GetRandomSongResponse(ZenAppClient.ServiceReference1.GetRandomSongResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetRandomSongResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public ZenAppClient.ServiceReference1.Song GetRandomSongResult;
+        
+        public GetRandomSongResponseBody() {
+        }
+        
+        public GetRandomSongResponseBody(ZenAppClient.ServiceReference1.Song GetRandomSongResult) {
+            this.GetRandomSongResult = GetRandomSongResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class VerifyGuessRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="VerifyGuess", Namespace="http://tempuri.org/", Order=0)]
+        public ZenAppClient.ServiceReference1.VerifyGuessRequestBody Body;
+        
+        public VerifyGuessRequest() {
+        }
+        
+        public VerifyGuessRequest(ZenAppClient.ServiceReference1.VerifyGuessRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class VerifyGuessRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int Id;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public int guessedYear;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string guessedCountry;
+        
+        public VerifyGuessRequestBody() {
+        }
+        
+        public VerifyGuessRequestBody(int Id, int guessedYear, string guessedCountry) {
+            this.Id = Id;
+            this.guessedYear = guessedYear;
+            this.guessedCountry = guessedCountry;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class VerifyGuessResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="VerifyGuessResponse", Namespace="http://tempuri.org/", Order=0)]
+        public ZenAppClient.ServiceReference1.VerifyGuessResponseBody Body;
+        
+        public VerifyGuessResponse() {
+        }
+        
+        public VerifyGuessResponse(ZenAppClient.ServiceReference1.VerifyGuessResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class VerifyGuessResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool VerifyGuessResult;
+        
+        public VerifyGuessResponseBody() {
+        }
+        
+        public VerifyGuessResponseBody(bool VerifyGuessResult) {
+            this.VerifyGuessResult = VerifyGuessResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetHintYearRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetHintYear", Namespace="http://tempuri.org/", Order=0)]
+        public ZenAppClient.ServiceReference1.GetHintYearRequestBody Body;
+        
+        public GetHintYearRequest() {
+        }
+        
+        public GetHintYearRequest(ZenAppClient.ServiceReference1.GetHintYearRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetHintYearRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int Id;
+        
+        public GetHintYearRequestBody() {
+        }
+        
+        public GetHintYearRequestBody(int Id) {
+            this.Id = Id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetHintYearResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetHintYearResponse", Namespace="http://tempuri.org/", Order=0)]
+        public ZenAppClient.ServiceReference1.GetHintYearResponseBody Body;
+        
+        public GetHintYearResponse() {
+        }
+        
+        public GetHintYearResponse(ZenAppClient.ServiceReference1.GetHintYearResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetHintYearResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string GetHintYearResult;
+        
+        public GetHintYearResponseBody() {
+        }
+        
+        public GetHintYearResponseBody(string GetHintYearResult) {
+            this.GetHintYearResult = GetHintYearResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetHintCountryRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetHintCountry", Namespace="http://tempuri.org/", Order=0)]
+        public ZenAppClient.ServiceReference1.GetHintCountryRequestBody Body;
+        
+        public GetHintCountryRequest() {
+        }
+        
+        public GetHintCountryRequest(ZenAppClient.ServiceReference1.GetHintCountryRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetHintCountryRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int Id;
+        
+        public GetHintCountryRequestBody() {
+        }
+        
+        public GetHintCountryRequestBody(int Id) {
+            this.Id = Id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetHintCountryResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetHintCountryResponse", Namespace="http://tempuri.org/", Order=0)]
+        public ZenAppClient.ServiceReference1.GetHintCountryResponseBody Body;
+        
+        public GetHintCountryResponse() {
+        }
+        
+        public GetHintCountryResponse(ZenAppClient.ServiceReference1.GetHintCountryResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetHintCountryResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string GetHintCountryResult;
+        
+        public GetHintCountryResponseBody() {
+        }
+        
+        public GetHintCountryResponseBody(string GetHintCountryResult) {
+            this.GetHintCountryResult = GetHintCountryResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetRandomAnswerRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetRandomAnswer", Namespace="http://tempuri.org/", Order=0)]
+        public ZenAppClient.ServiceReference1.GetRandomAnswerRequestBody Body;
+        
+        public GetRandomAnswerRequest() {
+        }
+        
+        public GetRandomAnswerRequest(ZenAppClient.ServiceReference1.GetRandomAnswerRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetRandomAnswerRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool isCorrect;
+        
+        public GetRandomAnswerRequestBody() {
+        }
+        
+        public GetRandomAnswerRequestBody(bool isCorrect) {
+            this.isCorrect = isCorrect;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetRandomAnswerResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetRandomAnswerResponse", Namespace="http://tempuri.org/", Order=0)]
+        public ZenAppClient.ServiceReference1.GetRandomAnswerResponseBody Body;
+        
+        public GetRandomAnswerResponse() {
+        }
+        
+        public GetRandomAnswerResponse(ZenAppClient.ServiceReference1.GetRandomAnswerResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetRandomAnswerResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string GetRandomAnswerResult;
+        
+        public GetRandomAnswerResponseBody() {
+        }
+        
+        public GetRandomAnswerResponseBody(string GetRandomAnswerResult) {
+            this.GetRandomAnswerResult = GetRandomAnswerResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class UpdatePointsRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdatePoints", Namespace="http://tempuri.org/", Order=0)]
+        public ZenAppClient.ServiceReference1.UpdatePointsRequestBody Body;
+        
+        public UpdatePointsRequest() {
+        }
+        
+        public UpdatePointsRequest(ZenAppClient.ServiceReference1.UpdatePointsRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class UpdatePointsRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string userId;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public int points;
+        
+        public UpdatePointsRequestBody() {
+        }
+        
+        public UpdatePointsRequestBody(string userId, int points) {
+            this.userId = userId;
+            this.points = points;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class UpdatePointsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdatePointsResponse", Namespace="http://tempuri.org/", Order=0)]
+        public ZenAppClient.ServiceReference1.UpdatePointsResponseBody Body;
+        
+        public UpdatePointsResponse() {
+        }
+        
+        public UpdatePointsResponse(ZenAppClient.ServiceReference1.UpdatePointsResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class UpdatePointsResponseBody {
+        
+        public UpdatePointsResponseBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class StartNewRoundRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="StartNewRound", Namespace="http://tempuri.org/", Order=0)]
+        public ZenAppClient.ServiceReference1.StartNewRoundRequestBody Body;
+        
+        public StartNewRoundRequest() {
+        }
+        
+        public StartNewRoundRequest(ZenAppClient.ServiceReference1.StartNewRoundRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class StartNewRoundRequestBody {
+        
+        public StartNewRoundRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class StartNewRoundResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="StartNewRoundResponse", Namespace="http://tempuri.org/", Order=0)]
+        public ZenAppClient.ServiceReference1.StartNewRoundResponseBody Body;
+        
+        public StartNewRoundResponse() {
+        }
+        
+        public StartNewRoundResponse(ZenAppClient.ServiceReference1.StartNewRoundResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class StartNewRoundResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public ZenAppClient.ServiceReference1.Song[] StartNewRoundResult;
+        
+        public StartNewRoundResponseBody() {
+        }
+        
+        public StartNewRoundResponseBody(ZenAppClient.ServiceReference1.Song[] StartNewRoundResult) {
+            this.StartNewRoundResult = StartNewRoundResult;
         }
     }
     
@@ -112,26 +776,204 @@ namespace ZenAppClient.ServiceReference1 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ZenAppClient.ServiceReference1.HelloWorldResponse ZenAppClient.ServiceReference1.WebService1Soap.HelloWorld(ZenAppClient.ServiceReference1.HelloWorldRequest request) {
-            return base.Channel.HelloWorld(request);
+        ZenAppClient.ServiceReference1.GetSongNameByIdResponse ZenAppClient.ServiceReference1.WebService1Soap.GetSongNameById(ZenAppClient.ServiceReference1.GetSongNameByIdRequest request) {
+            return base.Channel.GetSongNameById(request);
         }
         
-        public string HelloWorld() {
-            ZenAppClient.ServiceReference1.HelloWorldRequest inValue = new ZenAppClient.ServiceReference1.HelloWorldRequest();
-            inValue.Body = new ZenAppClient.ServiceReference1.HelloWorldRequestBody();
-            ZenAppClient.ServiceReference1.HelloWorldResponse retVal = ((ZenAppClient.ServiceReference1.WebService1Soap)(this)).HelloWorld(inValue);
-            return retVal.Body.HelloWorldResult;
+        public string GetSongNameById(int songId) {
+            ZenAppClient.ServiceReference1.GetSongNameByIdRequest inValue = new ZenAppClient.ServiceReference1.GetSongNameByIdRequest();
+            inValue.Body = new ZenAppClient.ServiceReference1.GetSongNameByIdRequestBody();
+            inValue.Body.songId = songId;
+            ZenAppClient.ServiceReference1.GetSongNameByIdResponse retVal = ((ZenAppClient.ServiceReference1.WebService1Soap)(this)).GetSongNameById(inValue);
+            return retVal.Body.GetSongNameByIdResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ZenAppClient.ServiceReference1.HelloWorldResponse> ZenAppClient.ServiceReference1.WebService1Soap.HelloWorldAsync(ZenAppClient.ServiceReference1.HelloWorldRequest request) {
-            return base.Channel.HelloWorldAsync(request);
+        System.Threading.Tasks.Task<ZenAppClient.ServiceReference1.GetSongNameByIdResponse> ZenAppClient.ServiceReference1.WebService1Soap.GetSongNameByIdAsync(ZenAppClient.ServiceReference1.GetSongNameByIdRequest request) {
+            return base.Channel.GetSongNameByIdAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ZenAppClient.ServiceReference1.HelloWorldResponse> HelloWorldAsync() {
-            ZenAppClient.ServiceReference1.HelloWorldRequest inValue = new ZenAppClient.ServiceReference1.HelloWorldRequest();
-            inValue.Body = new ZenAppClient.ServiceReference1.HelloWorldRequestBody();
-            return ((ZenAppClient.ServiceReference1.WebService1Soap)(this)).HelloWorldAsync(inValue);
+        public System.Threading.Tasks.Task<ZenAppClient.ServiceReference1.GetSongNameByIdResponse> GetSongNameByIdAsync(int songId) {
+            ZenAppClient.ServiceReference1.GetSongNameByIdRequest inValue = new ZenAppClient.ServiceReference1.GetSongNameByIdRequest();
+            inValue.Body = new ZenAppClient.ServiceReference1.GetSongNameByIdRequestBody();
+            inValue.Body.songId = songId;
+            return ((ZenAppClient.ServiceReference1.WebService1Soap)(this)).GetSongNameByIdAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ZenAppClient.ServiceReference1.GetRandomSongResponse ZenAppClient.ServiceReference1.WebService1Soap.GetRandomSong(ZenAppClient.ServiceReference1.GetRandomSongRequest request) {
+            return base.Channel.GetRandomSong(request);
+        }
+        
+        public ZenAppClient.ServiceReference1.Song GetRandomSong() {
+            ZenAppClient.ServiceReference1.GetRandomSongRequest inValue = new ZenAppClient.ServiceReference1.GetRandomSongRequest();
+            inValue.Body = new ZenAppClient.ServiceReference1.GetRandomSongRequestBody();
+            ZenAppClient.ServiceReference1.GetRandomSongResponse retVal = ((ZenAppClient.ServiceReference1.WebService1Soap)(this)).GetRandomSong(inValue);
+            return retVal.Body.GetRandomSongResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ZenAppClient.ServiceReference1.GetRandomSongResponse> ZenAppClient.ServiceReference1.WebService1Soap.GetRandomSongAsync(ZenAppClient.ServiceReference1.GetRandomSongRequest request) {
+            return base.Channel.GetRandomSongAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ZenAppClient.ServiceReference1.GetRandomSongResponse> GetRandomSongAsync() {
+            ZenAppClient.ServiceReference1.GetRandomSongRequest inValue = new ZenAppClient.ServiceReference1.GetRandomSongRequest();
+            inValue.Body = new ZenAppClient.ServiceReference1.GetRandomSongRequestBody();
+            return ((ZenAppClient.ServiceReference1.WebService1Soap)(this)).GetRandomSongAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ZenAppClient.ServiceReference1.VerifyGuessResponse ZenAppClient.ServiceReference1.WebService1Soap.VerifyGuess(ZenAppClient.ServiceReference1.VerifyGuessRequest request) {
+            return base.Channel.VerifyGuess(request);
+        }
+        
+        public bool VerifyGuess(int Id, int guessedYear, string guessedCountry) {
+            ZenAppClient.ServiceReference1.VerifyGuessRequest inValue = new ZenAppClient.ServiceReference1.VerifyGuessRequest();
+            inValue.Body = new ZenAppClient.ServiceReference1.VerifyGuessRequestBody();
+            inValue.Body.Id = Id;
+            inValue.Body.guessedYear = guessedYear;
+            inValue.Body.guessedCountry = guessedCountry;
+            ZenAppClient.ServiceReference1.VerifyGuessResponse retVal = ((ZenAppClient.ServiceReference1.WebService1Soap)(this)).VerifyGuess(inValue);
+            return retVal.Body.VerifyGuessResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ZenAppClient.ServiceReference1.VerifyGuessResponse> ZenAppClient.ServiceReference1.WebService1Soap.VerifyGuessAsync(ZenAppClient.ServiceReference1.VerifyGuessRequest request) {
+            return base.Channel.VerifyGuessAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ZenAppClient.ServiceReference1.VerifyGuessResponse> VerifyGuessAsync(int Id, int guessedYear, string guessedCountry) {
+            ZenAppClient.ServiceReference1.VerifyGuessRequest inValue = new ZenAppClient.ServiceReference1.VerifyGuessRequest();
+            inValue.Body = new ZenAppClient.ServiceReference1.VerifyGuessRequestBody();
+            inValue.Body.Id = Id;
+            inValue.Body.guessedYear = guessedYear;
+            inValue.Body.guessedCountry = guessedCountry;
+            return ((ZenAppClient.ServiceReference1.WebService1Soap)(this)).VerifyGuessAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ZenAppClient.ServiceReference1.GetHintYearResponse ZenAppClient.ServiceReference1.WebService1Soap.GetHintYear(ZenAppClient.ServiceReference1.GetHintYearRequest request) {
+            return base.Channel.GetHintYear(request);
+        }
+        
+        public string GetHintYear(int Id) {
+            ZenAppClient.ServiceReference1.GetHintYearRequest inValue = new ZenAppClient.ServiceReference1.GetHintYearRequest();
+            inValue.Body = new ZenAppClient.ServiceReference1.GetHintYearRequestBody();
+            inValue.Body.Id = Id;
+            ZenAppClient.ServiceReference1.GetHintYearResponse retVal = ((ZenAppClient.ServiceReference1.WebService1Soap)(this)).GetHintYear(inValue);
+            return retVal.Body.GetHintYearResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ZenAppClient.ServiceReference1.GetHintYearResponse> ZenAppClient.ServiceReference1.WebService1Soap.GetHintYearAsync(ZenAppClient.ServiceReference1.GetHintYearRequest request) {
+            return base.Channel.GetHintYearAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ZenAppClient.ServiceReference1.GetHintYearResponse> GetHintYearAsync(int Id) {
+            ZenAppClient.ServiceReference1.GetHintYearRequest inValue = new ZenAppClient.ServiceReference1.GetHintYearRequest();
+            inValue.Body = new ZenAppClient.ServiceReference1.GetHintYearRequestBody();
+            inValue.Body.Id = Id;
+            return ((ZenAppClient.ServiceReference1.WebService1Soap)(this)).GetHintYearAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ZenAppClient.ServiceReference1.GetHintCountryResponse ZenAppClient.ServiceReference1.WebService1Soap.GetHintCountry(ZenAppClient.ServiceReference1.GetHintCountryRequest request) {
+            return base.Channel.GetHintCountry(request);
+        }
+        
+        public string GetHintCountry(int Id) {
+            ZenAppClient.ServiceReference1.GetHintCountryRequest inValue = new ZenAppClient.ServiceReference1.GetHintCountryRequest();
+            inValue.Body = new ZenAppClient.ServiceReference1.GetHintCountryRequestBody();
+            inValue.Body.Id = Id;
+            ZenAppClient.ServiceReference1.GetHintCountryResponse retVal = ((ZenAppClient.ServiceReference1.WebService1Soap)(this)).GetHintCountry(inValue);
+            return retVal.Body.GetHintCountryResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ZenAppClient.ServiceReference1.GetHintCountryResponse> ZenAppClient.ServiceReference1.WebService1Soap.GetHintCountryAsync(ZenAppClient.ServiceReference1.GetHintCountryRequest request) {
+            return base.Channel.GetHintCountryAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ZenAppClient.ServiceReference1.GetHintCountryResponse> GetHintCountryAsync(int Id) {
+            ZenAppClient.ServiceReference1.GetHintCountryRequest inValue = new ZenAppClient.ServiceReference1.GetHintCountryRequest();
+            inValue.Body = new ZenAppClient.ServiceReference1.GetHintCountryRequestBody();
+            inValue.Body.Id = Id;
+            return ((ZenAppClient.ServiceReference1.WebService1Soap)(this)).GetHintCountryAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ZenAppClient.ServiceReference1.GetRandomAnswerResponse ZenAppClient.ServiceReference1.WebService1Soap.GetRandomAnswer(ZenAppClient.ServiceReference1.GetRandomAnswerRequest request) {
+            return base.Channel.GetRandomAnswer(request);
+        }
+        
+        public string GetRandomAnswer(bool isCorrect) {
+            ZenAppClient.ServiceReference1.GetRandomAnswerRequest inValue = new ZenAppClient.ServiceReference1.GetRandomAnswerRequest();
+            inValue.Body = new ZenAppClient.ServiceReference1.GetRandomAnswerRequestBody();
+            inValue.Body.isCorrect = isCorrect;
+            ZenAppClient.ServiceReference1.GetRandomAnswerResponse retVal = ((ZenAppClient.ServiceReference1.WebService1Soap)(this)).GetRandomAnswer(inValue);
+            return retVal.Body.GetRandomAnswerResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ZenAppClient.ServiceReference1.GetRandomAnswerResponse> ZenAppClient.ServiceReference1.WebService1Soap.GetRandomAnswerAsync(ZenAppClient.ServiceReference1.GetRandomAnswerRequest request) {
+            return base.Channel.GetRandomAnswerAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ZenAppClient.ServiceReference1.GetRandomAnswerResponse> GetRandomAnswerAsync(bool isCorrect) {
+            ZenAppClient.ServiceReference1.GetRandomAnswerRequest inValue = new ZenAppClient.ServiceReference1.GetRandomAnswerRequest();
+            inValue.Body = new ZenAppClient.ServiceReference1.GetRandomAnswerRequestBody();
+            inValue.Body.isCorrect = isCorrect;
+            return ((ZenAppClient.ServiceReference1.WebService1Soap)(this)).GetRandomAnswerAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ZenAppClient.ServiceReference1.UpdatePointsResponse ZenAppClient.ServiceReference1.WebService1Soap.UpdatePoints(ZenAppClient.ServiceReference1.UpdatePointsRequest request) {
+            return base.Channel.UpdatePoints(request);
+        }
+        
+        public void UpdatePoints(string userId, int points) {
+            ZenAppClient.ServiceReference1.UpdatePointsRequest inValue = new ZenAppClient.ServiceReference1.UpdatePointsRequest();
+            inValue.Body = new ZenAppClient.ServiceReference1.UpdatePointsRequestBody();
+            inValue.Body.userId = userId;
+            inValue.Body.points = points;
+            ZenAppClient.ServiceReference1.UpdatePointsResponse retVal = ((ZenAppClient.ServiceReference1.WebService1Soap)(this)).UpdatePoints(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ZenAppClient.ServiceReference1.UpdatePointsResponse> ZenAppClient.ServiceReference1.WebService1Soap.UpdatePointsAsync(ZenAppClient.ServiceReference1.UpdatePointsRequest request) {
+            return base.Channel.UpdatePointsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ZenAppClient.ServiceReference1.UpdatePointsResponse> UpdatePointsAsync(string userId, int points) {
+            ZenAppClient.ServiceReference1.UpdatePointsRequest inValue = new ZenAppClient.ServiceReference1.UpdatePointsRequest();
+            inValue.Body = new ZenAppClient.ServiceReference1.UpdatePointsRequestBody();
+            inValue.Body.userId = userId;
+            inValue.Body.points = points;
+            return ((ZenAppClient.ServiceReference1.WebService1Soap)(this)).UpdatePointsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ZenAppClient.ServiceReference1.StartNewRoundResponse ZenAppClient.ServiceReference1.WebService1Soap.StartNewRound(ZenAppClient.ServiceReference1.StartNewRoundRequest request) {
+            return base.Channel.StartNewRound(request);
+        }
+        
+        public ZenAppClient.ServiceReference1.Song[] StartNewRound() {
+            ZenAppClient.ServiceReference1.StartNewRoundRequest inValue = new ZenAppClient.ServiceReference1.StartNewRoundRequest();
+            inValue.Body = new ZenAppClient.ServiceReference1.StartNewRoundRequestBody();
+            ZenAppClient.ServiceReference1.StartNewRoundResponse retVal = ((ZenAppClient.ServiceReference1.WebService1Soap)(this)).StartNewRound(inValue);
+            return retVal.Body.StartNewRoundResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ZenAppClient.ServiceReference1.StartNewRoundResponse> ZenAppClient.ServiceReference1.WebService1Soap.StartNewRoundAsync(ZenAppClient.ServiceReference1.StartNewRoundRequest request) {
+            return base.Channel.StartNewRoundAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ZenAppClient.ServiceReference1.StartNewRoundResponse> StartNewRoundAsync() {
+            ZenAppClient.ServiceReference1.StartNewRoundRequest inValue = new ZenAppClient.ServiceReference1.StartNewRoundRequest();
+            inValue.Body = new ZenAppClient.ServiceReference1.StartNewRoundRequestBody();
+            return ((ZenAppClient.ServiceReference1.WebService1Soap)(this)).StartNewRoundAsync(inValue);
         }
     }
 }

@@ -1,0 +1,17 @@
+﻿INSERT INTO [dbo].[Answers] ([Id], [Answer], [Correct])
+VALUES
+(16, 'Well, well, well... Look who managed to stumble upon the right answer. Don''t sprain your arm patting yourself on the back.', 1),
+(17, 'Ah, a correct guess! I suppose even a broken clock is right twice a day.', 1),
+(18, 'Congratulations! You''ve unlocked the ''correct guess'' achievement. Now let''s see if you can do it again.', 1),
+(19, 'Well, would you look at that? You''ve defied the odds and guessed correctly. For once.', 1),
+(20, 'And here I thought we''d be here all day. Color me slightly impressed.', 1),
+(21, 'Oh, you got it right. Should I start planning your victory parade now?', 1),
+(22, 'Well done! You''ve successfully dodged humiliation... for now.', 1),
+(23, 'You did it! I guess there''s hope for you yet.', 1),
+(24, 'Well, I''ll be darned. You actually got it right. Don''t let it go to your head.', 1),
+(25, 'A correct guess! I suppose miracles do happen.', 1),
+(26, 'Impressive! You''ve managed to scrape together a correct answer. Don''t make a habit of it.', 1),
+(27, 'Huzzah! You''ve emerged victorious from the depths of cluelessness.', 1),
+(28, 'And the correct answer is... you! Surprisingly, you got it right.', 1),
+(29, 'Well, would you look at that? Even a blind squirrel finds a nut sometimes.', 1),
+(30, 'Congratulations! You''ve risen from the ashes of uncertainty and guessed correctly. What a time to be alive.', 1);
