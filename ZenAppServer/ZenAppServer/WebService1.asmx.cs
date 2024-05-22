@@ -46,7 +46,7 @@ namespace ZenAppServer
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "SELECT TOP 1 * FROM Songs ORDER BY NEWID()";
+                string query = "SELECT TOP 1 * FROM Songs WHERE AudioFilePath IS NOT NULL ORDER BY NEWID()";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 conn.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -59,7 +59,8 @@ namespace ZenAppServer
                         SongYear = reader.GetInt32(2),
                         SongArtist = reader.GetString(3),
                         SongName = reader.GetString(4),
-                        SongLink = reader.GetString(5)
+                        SongLink = reader.GetString(5),
+                        SongPath = reader.GetString(6)
                     };
                 }
             }
@@ -174,5 +175,6 @@ namespace ZenAppServer
         public string SongArtist { get; set; }
         public string SongName { get; set; }
         public string SongLink { get; set; }
+        public string SongPath { get; set; }
     }
 }

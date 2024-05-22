@@ -133,7 +133,31 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Connected Services\ServiceReference1\WebService1.wsdl" />
-    <None Include="Connected Services\ServiceReference1\ZenAppClient.ServiceReference1.HelloWorldResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\ZenAppClient.ServiceReference1.GetHintCountryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\ZenAppClient.ServiceReference1.GetHintYearResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\ZenAppClient.ServiceReference1.GetRandomAnswerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\ZenAppClient.ServiceReference1.GetRandomSongResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\ZenAppClient.ServiceReference1.GetSongNameByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\ZenAppClient.ServiceReference1.Song.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\ZenAppClient.ServiceReference1.StartNewRoundResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\ZenAppClient.ServiceReference1.UpdatePointsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\ZenAppClient.ServiceReference1.VerifyGuessResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="packages.config" />

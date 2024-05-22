@@ -60,7 +60,8 @@ namespace ZenAppClient
             else
             {
                 //TODO: path2Song=service.GetRandomSong
-                path2Song = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "dwnl", "Alone.mp4");
+                String song = service.GetRandomSong().SongPath;
+                path2Song = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "dwnl", song);
                 existingPath = path2Song;
             }
 
@@ -234,5 +235,14 @@ namespace ZenAppClient
             SubmitForm submitform = new SubmitForm();
             submitform.Show();
         }
+    }
+    public class Song
+    {
+        public int Id { get; set; }
+        public string SongCountry { get; set; }
+        public int SongYear { get; set; }
+        public string SongArtist { get; set; }
+        public string SongName { get; set; }
+        public string SongLink { get; set; }
     }
 }
