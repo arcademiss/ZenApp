@@ -27,7 +27,7 @@ namespace ZenAppClient
         private void button_Submit_Click(object sender, EventArgs e)
         {
 
-            //string connectionString = "your_connection_string_here"; // Update with your connection string
+            
 
             //in the case that one of the textboxes is empty
             if (string.IsNullOrWhiteSpace(textBox_Country.Text) || 
@@ -49,28 +49,7 @@ namespace ZenAppClient
             }
 
 
-            /*using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    conn.Open();
-                    string query = "INSERT INTO Songs (SongCountry, SongYear, SongName, SongArtist, SongLink) VALUES (@SongCountry, @SongYear, @SongName, @SongArtist, @SongLink)";
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@SongCountry", textBox_Country.Text);
-                        cmd.Parameters.AddWithValue("@SongYear", textBox_Year.Text);
-                        cmd.Parameters.AddWithValue("@SongName", textBox_Song_Name.Text);
-                        cmd.Parameters.AddWithValue("@SongArtist", textBox_Artist.Text);
-                        cmd.Parameters.AddWithValue("@SongLink", textBox_Link.Text);
-                        cmd.ExecuteNonQuery();
-                    }
-
-                    MessageBox.Show("Data saved to database successfully.");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("An error occurred: " + ex.Message);
-                }*/
+            
             }
 
         private void SubmitForm_Load(object sender, EventArgs e)

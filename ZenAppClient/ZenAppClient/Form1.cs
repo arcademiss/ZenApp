@@ -227,5 +227,11 @@ namespace ZenAppClient
         {
 
         }
+
+        private void button_Suggestion_Click(object sender, EventArgs e)
+        {
+            SubmitForm submitform = new SubmitForm();
+            submitform.Show();
+        }
     }
 }
