@@ -1,0 +1,1 @@
+﻿CREATE TABLE [dbo].[Sugestions] ( [Id] INT NOT NULL PRIMARY KEY, [SongCountry] NVARCHAR(MAX) NOT NULL, [SongYear] int NOT NULL, [SongName] NVARCHAR(MAX) NOT NULL, [SongArtist] NVARCHAR(MAX) NOT NULL, [SongLink] NVARCHAR(MAX) NOT NULL )
