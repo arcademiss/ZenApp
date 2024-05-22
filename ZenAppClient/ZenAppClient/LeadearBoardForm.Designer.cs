@@ -50,6 +50,7 @@
             this.Controls.Add(this.listLeaderboard);
             this.Name = "LeadearBoardForm";
             this.Text = "LeadearBoardForm";
+            this.Load += new System.EventHandler(this.LeadearBoardForm_Load);
             this.ResumeLayout(false);
 
         }

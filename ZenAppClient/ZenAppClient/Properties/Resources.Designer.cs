@@ -63,6 +63,16 @@ namespace ZenAppClient.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap easter_egg {
+            get {
+                object obj = ResourceManager.GetObject("easter_egg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hand_painted_watercolor_abstract_background_23_2148993785 {
             get {
                 object obj = ResourceManager.GetObject("hand-painted-watercolor-abstract-background_23-2148993785", resourceCulture);
