@@ -23,5 +23,10 @@ namespace ZenAppClient
                 listLeaderboard.Items.Add(entry);
             }
         }
+
+        private void LeadearBoardForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -105,6 +105,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FormEndGame";
             this.Text = "Game Over!";
+            this.Load += new System.EventHandler(this.FormEndGame_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

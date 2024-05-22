@@ -52,5 +52,10 @@ namespace ZenAppClient
         {
             return ZenPoints;
         }
+
+        private void FormEndGame_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
