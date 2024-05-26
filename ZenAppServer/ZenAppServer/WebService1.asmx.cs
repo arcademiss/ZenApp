@@ -6,6 +6,8 @@ using System.Web;
 using System.Web.Services;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
+using System.Runtime.Remoting.Messaging;
 
 namespace ZenAppServer
 {
@@ -54,5 +56,74 @@ namespace ZenAppServer
             }
             return songName;
         }
+
+        [WebMethod]
+        public List<(string userID, string points)> GetLeaderBoard()
+        {
+            string userID = "";
+            string points = "";
+            var data = new List<(string userID, string points)>();
+            string sql = "SELECT [userId],[Points] FROM [dbo].[LeaderBoard] ORDER BY [Points] DESC;";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+
+
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                while (reader.Read())
+                                {
+
+                                    userID = reader["userId"].ToString();
+                                    points = reader["Points"].ToString();
+
+
+                                    data.Add((userID, points));
+                                }
+                            }
+                        }
+                    }
+                }
+
+                catch (Exception ex)
+                {
+
+                    userID = "Error: " + ex.Message;
+                    points = "Error: " + ex.Message;
+                }
+            }
+            return data;
+        }
+
+
+    
+    [WebMethod]
+    public void InsSuges(int songId)
+    {
+
+
+         using (SqlConnection connection = new SqlConnection(connectionString))
+         {
+             connection.Open();
+             string sql = "INSERT INTO [dbo].[Sugestions] ([Id],[SongCountry], [SongYear], [SongName], [SongArtist], [SongLink])" +
+                                "SELECT [Id],[SongCountry], [SongYear], [SongName], [SongArtist], [SongLink] FROM [dbo].[Songs] " +
+                                "WHERE [Id] = @Id;"; ;
+             using (SqlCommand command = new SqlCommand(sql, connection))
+             {
+                 command.Parameters.AddWithValue("@Id", songId);
+                 object result = command.ExecuteScalar();
+
+             }
+         }
+
+        }
     }
 }
+
