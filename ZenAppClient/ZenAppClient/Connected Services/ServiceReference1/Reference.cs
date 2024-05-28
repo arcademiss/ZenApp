@@ -152,6 +152,67 @@ namespace ZenAppClient.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ValueTupleOfStringString", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class ValueTupleOfStringString : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Item1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Item2Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Item1 {
+            get {
+                return this.Item1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Item1Field, value) != true)) {
+                    this.Item1Field = value;
+                    this.RaisePropertyChanged("Item1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Item2 {
+            get {
+                return this.Item2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Item2Field, value) != true)) {
+                    this.Item2Field = value;
+                    this.RaisePropertyChanged("Item2");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.WebService1Soap")]
     public interface WebService1Soap {
@@ -205,12 +266,33 @@ namespace ZenAppClient.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UpdatePoints", ReplyAction="*")]
         System.Threading.Tasks.Task<ZenAppClient.ServiceReference1.UpdatePointsResponse> UpdatePointsAsync(ZenAppClient.ServiceReference1.UpdatePointsRequest request);
         
+        // CODEGEN: Generating message contract since element name HelloWorldResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
+        ZenAppClient.ServiceReference1.HelloWorldResponse HelloWorld(ZenAppClient.ServiceReference1.HelloWorldRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
+        System.Threading.Tasks.Task<ZenAppClient.ServiceReference1.HelloWorldResponse> HelloWorldAsync(ZenAppClient.ServiceReference1.HelloWorldRequest request);
+        
         // CODEGEN: Generating message contract since element name StartNewRoundResult from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/StartNewRound", ReplyAction="*")]
         ZenAppClient.ServiceReference1.StartNewRoundResponse StartNewRound(ZenAppClient.ServiceReference1.StartNewRoundRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/StartNewRound", ReplyAction="*")]
         System.Threading.Tasks.Task<ZenAppClient.ServiceReference1.StartNewRoundResponse> StartNewRoundAsync(ZenAppClient.ServiceReference1.StartNewRoundRequest request);
+        
+        // CODEGEN: Generating message contract since element name GetLeaderBoardResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetLeaderBoard", ReplyAction="*")]
+        ZenAppClient.ServiceReference1.GetLeaderBoardResponse GetLeaderBoard(ZenAppClient.ServiceReference1.GetLeaderBoardRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetLeaderBoard", ReplyAction="*")]
+        System.Threading.Tasks.Task<ZenAppClient.ServiceReference1.GetLeaderBoardResponse> GetLeaderBoardAsync(ZenAppClient.ServiceReference1.GetLeaderBoardRequest request);
+        
+        // CODEGEN: Generating message contract since element name SongCountry from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsSuges", ReplyAction="*")]
+        ZenAppClient.ServiceReference1.InsSugesResponse InsSuges(ZenAppClient.ServiceReference1.InsSugesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsSuges", ReplyAction="*")]
+        System.Threading.Tasks.Task<ZenAppClient.ServiceReference1.InsSugesResponse> InsSugesAsync(ZenAppClient.ServiceReference1.InsSugesRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -691,6 +773,67 @@ namespace ZenAppClient.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class HelloWorldRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="HelloWorld", Namespace="http://tempuri.org/", Order=0)]
+        public ZenAppClient.ServiceReference1.HelloWorldRequestBody Body;
+        
+        public HelloWorldRequest() {
+        }
+        
+        public HelloWorldRequest(ZenAppClient.ServiceReference1.HelloWorldRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class HelloWorldRequestBody {
+        
+        public HelloWorldRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class HelloWorldResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="HelloWorldResponse", Namespace="http://tempuri.org/", Order=0)]
+        public ZenAppClient.ServiceReference1.HelloWorldResponseBody Body;
+        
+        public HelloWorldResponse() {
+        }
+        
+        public HelloWorldResponse(ZenAppClient.ServiceReference1.HelloWorldResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class HelloWorldResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string HelloWorldResult;
+        
+        public HelloWorldResponseBody() {
+        }
+        
+        public HelloWorldResponseBody(string HelloWorldResult) {
+            this.HelloWorldResult = HelloWorldResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class StartNewRoundRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="StartNewRound", Namespace="http://tempuri.org/", Order=0)]
@@ -745,6 +888,144 @@ namespace ZenAppClient.ServiceReference1 {
         
         public StartNewRoundResponseBody(ZenAppClient.ServiceReference1.Song[] StartNewRoundResult) {
             this.StartNewRoundResult = StartNewRoundResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetLeaderBoardRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetLeaderBoard", Namespace="http://tempuri.org/", Order=0)]
+        public ZenAppClient.ServiceReference1.GetLeaderBoardRequestBody Body;
+        
+        public GetLeaderBoardRequest() {
+        }
+        
+        public GetLeaderBoardRequest(ZenAppClient.ServiceReference1.GetLeaderBoardRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class GetLeaderBoardRequestBody {
+        
+        public GetLeaderBoardRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetLeaderBoardResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetLeaderBoardResponse", Namespace="http://tempuri.org/", Order=0)]
+        public ZenAppClient.ServiceReference1.GetLeaderBoardResponseBody Body;
+        
+        public GetLeaderBoardResponse() {
+        }
+        
+        public GetLeaderBoardResponse(ZenAppClient.ServiceReference1.GetLeaderBoardResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetLeaderBoardResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public ZenAppClient.ServiceReference1.ValueTupleOfStringString[] GetLeaderBoardResult;
+        
+        public GetLeaderBoardResponseBody() {
+        }
+        
+        public GetLeaderBoardResponseBody(ZenAppClient.ServiceReference1.ValueTupleOfStringString[] GetLeaderBoardResult) {
+            this.GetLeaderBoardResult = GetLeaderBoardResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class InsSugesRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="InsSuges", Namespace="http://tempuri.org/", Order=0)]
+        public ZenAppClient.ServiceReference1.InsSugesRequestBody Body;
+        
+        public InsSugesRequest() {
+        }
+        
+        public InsSugesRequest(ZenAppClient.ServiceReference1.InsSugesRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class InsSugesRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string SongCountry;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public int SongYear;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string SongName;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string SongArtist;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string SongLink;
+        
+        public InsSugesRequestBody() {
+        }
+        
+        public InsSugesRequestBody(string SongCountry, int SongYear, string SongName, string SongArtist, string SongLink) {
+            this.SongCountry = SongCountry;
+            this.SongYear = SongYear;
+            this.SongName = SongName;
+            this.SongArtist = SongArtist;
+            this.SongLink = SongLink;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class InsSugesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="InsSugesResponse", Namespace="http://tempuri.org/", Order=0)]
+        public ZenAppClient.ServiceReference1.InsSugesResponseBody Body;
+        
+        public InsSugesResponse() {
+        }
+        
+        public InsSugesResponse(ZenAppClient.ServiceReference1.InsSugesResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class InsSugesResponseBody {
+        
+        public InsSugesResponseBody() {
         }
     }
     
@@ -954,6 +1235,29 @@ namespace ZenAppClient.ServiceReference1 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ZenAppClient.ServiceReference1.HelloWorldResponse ZenAppClient.ServiceReference1.WebService1Soap.HelloWorld(ZenAppClient.ServiceReference1.HelloWorldRequest request) {
+            return base.Channel.HelloWorld(request);
+        }
+        
+        public string HelloWorld() {
+            ZenAppClient.ServiceReference1.HelloWorldRequest inValue = new ZenAppClient.ServiceReference1.HelloWorldRequest();
+            inValue.Body = new ZenAppClient.ServiceReference1.HelloWorldRequestBody();
+            ZenAppClient.ServiceReference1.HelloWorldResponse retVal = ((ZenAppClient.ServiceReference1.WebService1Soap)(this)).HelloWorld(inValue);
+            return retVal.Body.HelloWorldResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ZenAppClient.ServiceReference1.HelloWorldResponse> ZenAppClient.ServiceReference1.WebService1Soap.HelloWorldAsync(ZenAppClient.ServiceReference1.HelloWorldRequest request) {
+            return base.Channel.HelloWorldAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ZenAppClient.ServiceReference1.HelloWorldResponse> HelloWorldAsync() {
+            ZenAppClient.ServiceReference1.HelloWorldRequest inValue = new ZenAppClient.ServiceReference1.HelloWorldRequest();
+            inValue.Body = new ZenAppClient.ServiceReference1.HelloWorldRequestBody();
+            return ((ZenAppClient.ServiceReference1.WebService1Soap)(this)).HelloWorldAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         ZenAppClient.ServiceReference1.StartNewRoundResponse ZenAppClient.ServiceReference1.WebService1Soap.StartNewRound(ZenAppClient.ServiceReference1.StartNewRoundRequest request) {
             return base.Channel.StartNewRound(request);
         }
@@ -974,6 +1278,61 @@ namespace ZenAppClient.ServiceReference1 {
             ZenAppClient.ServiceReference1.StartNewRoundRequest inValue = new ZenAppClient.ServiceReference1.StartNewRoundRequest();
             inValue.Body = new ZenAppClient.ServiceReference1.StartNewRoundRequestBody();
             return ((ZenAppClient.ServiceReference1.WebService1Soap)(this)).StartNewRoundAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ZenAppClient.ServiceReference1.GetLeaderBoardResponse ZenAppClient.ServiceReference1.WebService1Soap.GetLeaderBoard(ZenAppClient.ServiceReference1.GetLeaderBoardRequest request) {
+            return base.Channel.GetLeaderBoard(request);
+        }
+        
+        public ZenAppClient.ServiceReference1.ValueTupleOfStringString[] GetLeaderBoard() {
+            ZenAppClient.ServiceReference1.GetLeaderBoardRequest inValue = new ZenAppClient.ServiceReference1.GetLeaderBoardRequest();
+            inValue.Body = new ZenAppClient.ServiceReference1.GetLeaderBoardRequestBody();
+            ZenAppClient.ServiceReference1.GetLeaderBoardResponse retVal = ((ZenAppClient.ServiceReference1.WebService1Soap)(this)).GetLeaderBoard(inValue);
+            return retVal.Body.GetLeaderBoardResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ZenAppClient.ServiceReference1.GetLeaderBoardResponse> ZenAppClient.ServiceReference1.WebService1Soap.GetLeaderBoardAsync(ZenAppClient.ServiceReference1.GetLeaderBoardRequest request) {
+            return base.Channel.GetLeaderBoardAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ZenAppClient.ServiceReference1.GetLeaderBoardResponse> GetLeaderBoardAsync() {
+            ZenAppClient.ServiceReference1.GetLeaderBoardRequest inValue = new ZenAppClient.ServiceReference1.GetLeaderBoardRequest();
+            inValue.Body = new ZenAppClient.ServiceReference1.GetLeaderBoardRequestBody();
+            return ((ZenAppClient.ServiceReference1.WebService1Soap)(this)).GetLeaderBoardAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ZenAppClient.ServiceReference1.InsSugesResponse ZenAppClient.ServiceReference1.WebService1Soap.InsSuges(ZenAppClient.ServiceReference1.InsSugesRequest request) {
+            return base.Channel.InsSuges(request);
+        }
+        
+        public void InsSuges(string SongCountry, int SongYear, string SongName, string SongArtist, string SongLink) {
+            ZenAppClient.ServiceReference1.InsSugesRequest inValue = new ZenAppClient.ServiceReference1.InsSugesRequest();
+            inValue.Body = new ZenAppClient.ServiceReference1.InsSugesRequestBody();
+            inValue.Body.SongCountry = SongCountry;
+            inValue.Body.SongYear = SongYear;
+            inValue.Body.SongName = SongName;
+            inValue.Body.SongArtist = SongArtist;
+            inValue.Body.SongLink = SongLink;
+            ZenAppClient.ServiceReference1.InsSugesResponse retVal = ((ZenAppClient.ServiceReference1.WebService1Soap)(this)).InsSuges(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ZenAppClient.ServiceReference1.InsSugesResponse> ZenAppClient.ServiceReference1.WebService1Soap.InsSugesAsync(ZenAppClient.ServiceReference1.InsSugesRequest request) {
+            return base.Channel.InsSugesAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ZenAppClient.ServiceReference1.InsSugesResponse> InsSugesAsync(string SongCountry, int SongYear, string SongName, string SongArtist, string SongLink) {
+            ZenAppClient.ServiceReference1.InsSugesRequest inValue = new ZenAppClient.ServiceReference1.InsSugesRequest();
+            inValue.Body = new ZenAppClient.ServiceReference1.InsSugesRequestBody();
+            inValue.Body.SongCountry = SongCountry;
+            inValue.Body.SongYear = SongYear;
+            inValue.Body.SongName = SongName;
+            inValue.Body.SongArtist = SongArtist;
+            inValue.Body.SongLink = SongLink;
+            return ((ZenAppClient.ServiceReference1.WebService1Soap)(this)).InsSugesAsync(inValue);
         }
     }
 }

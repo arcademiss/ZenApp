@@ -106,6 +106,16 @@
       <s:element name="UpdatePointsResponse">
         <s:complexType />
       </s:element>
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="StartNewRound">
         <s:complexType />
       </s:element>
@@ -121,6 +131,41 @@
           <s:element minOccurs="0" maxOccurs="unbounded" name="Song" nillable="true" type="tns:Song" />
         </s:sequence>
       </s:complexType>
+      <s:element name="GetLeaderBoard">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetLeaderBoardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLeaderBoardResult" type="tns:ArrayOfValueTupleOfStringString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfValueTupleOfStringString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ValueTupleOfStringString" type="tns:ValueTupleOfStringString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValueTupleOfStringString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Item1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Item2" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InsSuges">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SongCountry" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SongYear" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SongName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SongArtist" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SongLink" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsSugesResponse">
+        <s:complexType />
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="GetSongNameByIdSoapIn">
@@ -165,11 +210,29 @@
   <wsdl:message name="UpdatePointsSoapOut">
     <wsdl:part name="parameters" element="tns:UpdatePointsResponse" />
   </wsdl:message>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
   <wsdl:message name="StartNewRoundSoapIn">
     <wsdl:part name="parameters" element="tns:StartNewRound" />
   </wsdl:message>
   <wsdl:message name="StartNewRoundSoapOut">
     <wsdl:part name="parameters" element="tns:StartNewRoundResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLeaderBoardSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLeaderBoard" />
+  </wsdl:message>
+  <wsdl:message name="GetLeaderBoardSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLeaderBoardResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsSugesSoapIn">
+    <wsdl:part name="parameters" element="tns:InsSuges" />
+  </wsdl:message>
+  <wsdl:message name="InsSugesSoapOut">
+    <wsdl:part name="parameters" element="tns:InsSugesResponse" />
   </wsdl:message>
   <wsdl:portType name="WebService1Soap">
     <wsdl:operation name="GetSongNameById">
@@ -200,9 +263,21 @@
       <wsdl:input message="tns:UpdatePointsSoapIn" />
       <wsdl:output message="tns:UpdatePointsSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="StartNewRound">
       <wsdl:input message="tns:StartNewRoundSoapIn" />
       <wsdl:output message="tns:StartNewRoundSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLeaderBoard">
+      <wsdl:input message="tns:GetLeaderBoardSoapIn" />
+      <wsdl:output message="tns:GetLeaderBoardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsSuges">
+      <wsdl:input message="tns:InsSugesSoapIn" />
+      <wsdl:output message="tns:InsSugesSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
@@ -270,8 +345,35 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="StartNewRound">
       <soap:operation soapAction="http://tempuri.org/StartNewRound" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLeaderBoard">
+      <soap:operation soapAction="http://tempuri.org/GetLeaderBoard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsSuges">
+      <soap:operation soapAction="http://tempuri.org/InsSuges" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -345,8 +447,35 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="StartNewRound">
       <soap12:operation soapAction="http://tempuri.org/StartNewRound" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLeaderBoard">
+      <soap12:operation soapAction="http://tempuri.org/GetLeaderBoard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsSuges">
+      <soap12:operation soapAction="http://tempuri.org/InsSuges" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
