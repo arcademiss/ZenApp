@@ -14,7 +14,7 @@ namespace ZenAppServer
     public class WebService1 : System.Web.Services.WebService
     {
         public string connectionString = ConfigurationManager.ConnectionStrings["ZenAppConnectionString"].ConnectionString;
-        public string connectionString = ConfigurationManager.ConnectionStrings["ZenAppConnectionString"].ConnectionString;
+        
 
         [WebMethod]
         public string GetSongNameById(int songId)
@@ -160,33 +160,7 @@ WHEN NOT MATCHED THEN
             return "Hello World";
         }
         [WebMethod]
-        public string GetSongNameById(int songId)
-        {
-            string songName = "";
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
-                    string sql = "SELECT SongName FROM Songs WHERE Id = @Id";
-                    using (SqlCommand command = new SqlCommand(sql, connection))
-                    {
-                        command.Parameters.AddWithValue("@Id", songId);
-                        object result = command.ExecuteScalar();
-                        if (result != null)
-                        {
-                            songName = result.ToString();
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-
-                songName = "Error: " + ex.Message;
-            }
-            return songName;
-        }
+        
         public List<Song> StartNewRound()
         {
             List<Song> songs = new List<Song>();
@@ -211,6 +185,79 @@ WHEN NOT MATCHED THEN
             }
             return songs;
         }
+        [WebMethod]
+        public List<(string userID, string points)> GetLeaderBoard()
+        {
+            string userID = "";
+            string points = "";
+            var data = new List<(string userID, string points)>();
+            string sql = "SELECT [userId],[Points] FROM [dbo].[LeaderBoard] ORDER BY [Points] DESC;";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+
+
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                while (reader.Read())
+                                {
+
+                                    userID = reader["userId"].ToString();
+                                    points = reader["Points"].ToString();
+
+
+                                    data.Add((userID, points));
+                                }
+                            }
+                        }
+                    }
+                }
+
+                catch (Exception ex)
+                {
+
+                    userID = "Error: " + ex.Message;
+                    points = "Error: " + ex.Message;
+                }
+            }
+            return data;
+        }
+
+
+        [WebMethod]
+        public void InsSuges(string SongCountry, int SongYear, string SongName, string SongArtist, string SongLink)
+        {
+            
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string sql = "INSERT INTO [dbo].[Sugestions] ([SongCountry], [SongYear], [SongName], [SongArtist], [SongLink]) " +
+                             "VALUES (@SongCountry, @SongYear, @SongName, @SongArtist, @SongLink)";
+
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@SongCountry", SongCountry);
+                    command.Parameters.AddWithValue("@SongYear", SongYear);
+                    command.Parameters.AddWithValue("@SongName", SongName);
+                    command.Parameters.AddWithValue("@SongArtist", SongArtist);
+                    command.Parameters.AddWithValue("@SongLink", SongLink);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+
+
+
     }
 
     public class Song

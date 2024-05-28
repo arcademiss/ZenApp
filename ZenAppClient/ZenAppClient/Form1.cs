@@ -167,16 +167,16 @@ namespace ZenAppClient
         private void buttonLeaderboard_Click(object sender, EventArgs e)
         {
             /// This function fetches the leaderboard and displays it in a new form
-            List<string> leaderboard = new List<string>
-            {
-                "1. Alice - 1500 points",
-            "2. Bob - 1400 points",
-            "3. Carol - 1300 points",
-            "4. Dave - 1200 points",
-            "5. Eve - 1100 points"
-            };
+            // List<string> leaderboard = service.GetLeaderBoard();
 
-            LeadearBoardForm leadearBoardForm = new LeadearBoardForm(leaderboard);
+            ZenAppClient.ServiceReference1.ValueTupleOfStringString[] leaderboard_raw = service.GetLeaderBoard();
+            List<String> leaderboard_list = new List<String>();
+            foreach (var item in leaderboard_raw)
+            {
+                string leaderboardEntry = $"{item.Item1}: {item.Item2}";
+                leaderboard_list.Add(leaderboardEntry);
+            }
+            LeadearBoardForm leadearBoardForm = new LeadearBoardForm(leaderboard_list);
             leadearBoardForm.ShowDialog();
             //TODO: replace with service call and populate the list
         

@@ -139,6 +139,9 @@
     <None Include="Connected Services\ServiceReference1\ZenAppClient.ServiceReference1.GetHintYearResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiceReference1\ZenAppClient.ServiceReference1.GetLeaderBoardResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiceReference1\ZenAppClient.ServiceReference1.GetRandomAnswerResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -148,6 +151,12 @@
     <None Include="Connected Services\ServiceReference1\ZenAppClient.ServiceReference1.GetSongNameByIdResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiceReference1\ZenAppClient.ServiceReference1.HelloWorldResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\ZenAppClient.ServiceReference1.InsSugesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiceReference1\ZenAppClient.ServiceReference1.Song.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -155,6 +164,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReference1\ZenAppClient.ServiceReference1.UpdatePointsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\ZenAppClient.ServiceReference1.ValueTupleOfStringString.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReference1\ZenAppClient.ServiceReference1.VerifyGuessResponse.datasource">

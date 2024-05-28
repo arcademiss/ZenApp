@@ -50,8 +50,19 @@ namespace ZenAppClient
                 MessageBox.Show("Please enter a valid year.");
                 return;
             }
+            string SongCountry, SongArtist, SongName, SongLink;
+            int SongYear;
+            SongCountry = textBox_Country.Text;
+            SongYear = Int32.Parse(textBox_Year.Text);
+            SongArtist = textBox_Artist.Text;
+            SongName = textBox_Song_Name.Text;
+            SongLink = textBox_Link.Text;
 
-            //TODO: implement the sending of data to the server. service.insertSuggestion(param)
+            
+
+            service.InsSuges(SongCountry, SongYear, SongName, SongArtist, SongLink);
+
+            this.Close();
             
             }
 
